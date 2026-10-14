@@ -199,8 +199,9 @@
   .hosp .card .k{font-size:11.5px;font-weight:800;color:var(--blue);letter-spacing:.5px}
   .hosp .card .ct{margin:2px 0 6px}
   .layers{grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr}
-  .layers ul{list-style:none}
-  .layers li{font-size:13.5px;color:var(--body);line-height:1.8;padding-right:14px;position:relative}
+  .layers ul{list-style:none;margin-top:6px}
+  .layers .card .ct{font-size:21px}
+  .layers li{font-size:17px;color:var(--body);line-height:1.9;padding-right:14px;position:relative}
   .layers li::before{content:"•";position:absolute;right:0;color:var(--mag);font-weight:800}
   .shot{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 6px 22px rgba(30,20,40,.12)}
   .shot .bar{height:20px;background:#f1efea;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:5px;padding:0 9px}
@@ -220,16 +221,17 @@
   table.cmp th{background:var(--soft);color:var(--ink);font-weight:800;font-size:13px;padding:11px 14px;text-align:right;border-bottom:2px solid #ecdcea}
   table.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
   table.cmp td.k{font-weight:800;color:var(--ink);white-space:nowrap}
+  table.cmp.big{font-size:17px} table.cmp.big td{padding:12px 16px} table.cmp.big th{font-size:14px}
   table.cmp td.now{color:var(--body)}
   table.cmp td.new{color:var(--green);font-weight:700}
   table.cmp td .lat{font-family:'Rubik'}
   .dir{display:grid;grid-template-columns:9.6cm 1fr;gap:26px;height:100%}
   .dir .tx{display:flex;flex-direction:column;gap:9px}
   .dir .no{font-family:'Rubik';font-size:54px;font-weight:800;color:var(--mag);line-height:1}
-  .dir h3{font-size:25px;line-height:1.25}
+  .dir h3{font-size:30px;line-height:1.25}
   .dir .imp{align-self:flex-start;background:#f4eef4;color:var(--purple);font-weight:800;font-size:13px;padding:4px 14px;border-radius:20px}
   .dir .tx h5{font-size:12.5px;font-weight:800;color:var(--muted);letter-spacing:.5px;margin-top:4px}
-  .dir .tx p{font-size:13.5px;line-height:1.7;color:var(--body)}
+  .dir .tx p{font-size:18px;line-height:1.65;color:var(--ink)}
   .dir .tx .ins{font-size:12px;color:var(--muted)}
   .dir .im{position:relative}
   .dir .im .shot{width:100%}
@@ -246,7 +248,7 @@
   .five .phone img{border-radius:10px}
   .ask{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;grid-auto-rows:3.9cm}
   .ask .card{display:flex;flex-direction:column}
-  .ask .card .q{font-size:17px;font-weight:800;color:var(--ink);line-height:1.5}
+  .ask .card .q{font-size:21px;font-weight:800;color:var(--ink);line-height:1.5}
   .ask .card .n{font-family:'Rubik';font-size:13px;font-weight:800;color:var(--mag);margin-bottom:6px}
   .ask .card p{margin-top:8px;font-size:13px;color:var(--muted)}
   .endmark{display:flex;align-items:center;gap:22px;margin-top:22px}
@@ -302,7 +304,7 @@ body{-webkit-font-smoothing:antialiased}
 .seg button{font:inherit;font-size:12.5px;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--muted);
   padding:5px 14px;border-radius:20px;cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
 .seg button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.dir .cap{margin-top:6px}
+.dir .seg{margin-top:12px}
 
 /* live screenshot gentle drift */
 .is-active .kb img{animation:kb 18s ease-in-out both}
@@ -425,14 +427,13 @@ body.idle #ui{opacity:0}
       <span class="pill">نسمع منكم</span>
     </div>
   </div>
-  <div class="c-foot"><span>عرض للنقاش، لا يتضمن سعراً ولا طلب اعتماد</span><span class="lat" dir="ltr">theteamkw.com · info@theteamkw.com · +965 5008008</span></div>
 </section>
 <section class="slide ">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">00</span><span class="lbl">المحتوى</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ما سنستعرضه معاً</h2><div class="s-sub">جلسة قصيرة نعرض فيها ما أنجزناه، ثم نتركها مفتوحة لآرائكم.</div>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ما سنستعرضه معاً</h2>
   <div class="body" style="margin-top:14px"><div class="cards" style="grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr"><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">01</span>من نحن</div><p>قصة ذا تيم وأرقامها منذ 2017</p></div><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">02</span>أعمالنا</div><p>القطاعات التي خدمناها وما نقدمه</p></div><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">03</span>موقعكم اليوم</div><p>ما يراه الزائر وما يُقاس فيه</p></div><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">04</span>خمسة اتجاهات</div><p>نموذج حي لكل اتجاه ومقارنة بينها</p></div><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">05</span>نسمع منكم</div><p>أسئلتنا لكم، وما الذي تريدونه</p></div></div></div>
   
   </section>
@@ -462,34 +463,34 @@ body.idle #ui{opacity:0}
   <div class="stat"><div class="n"><span dir="ltr"><span class="cnt" data-to="60">60</span>+</span></div><div class="l">نظاماً ومشروعاً</div></div>
   <div class="stat"><div class="n"><span dir="ltr"><span class="cnt" data-to="8">8</span>+</span></div><div class="l">قطاعات نخدمها</div></div>
 </div></div>
-  <div class="src">المصدر: الملف التعريفي لشركة ذا تيم</div>
+  
   </section>
 <section class="slide ">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">02</span><span class="lbl">أعمالنا</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">فريق واحد، قطاعات متعددة</h2><div class="s-sub">أنجزنا مشاريع في القطاعين العام والخاص بالكويت.</div>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">فريق واحد، قطاعات متعددة</h2>
   <div class="body" style="margin-top:14px"><div class="cards sectors"><div class="card b"><div class="ct"><span class="ic"></span>الرعاية الصحية</div><p>الأميري · الصدري · جابر<br>مبارك · دسمان · سدرة</p></div><div class="card o"><div class="ct"><span class="ic"></span>الخدمات المصرفية</div><p>بنك برقان<br>منصة ذكاء إدارة المشاريع</p></div><div class="card p"><div class="ct"><span class="ic"></span>اختبار الأنظمة</div><p>ضمان الجودة والاختبار الآلي<br>توليد الاختبارات بالذكاء الاصطناعي</p></div><div class="card g"><div class="ct"><span class="ic"></span>القطاع القانوني</div><p>مجموعة الجوهرة</p></div><div class="card b"><div class="ct"><span class="ic"></span>الفنون والثقافة</div><p>دن غاليري</p></div><div class="card o"><div class="ct"><span class="ic"></span>السيارات والرياضة</div><p>أكاديمية <span class='lat'>Q8 Moto</span></p></div><div class="card p"><div class="ct"><span class="ic"></span>الصناعة</div><p><span class='lat'>NICE</span> · الوطنية للسيراميك الصناعي</p></div><div class="card g"><div class="ct"><span class="ic"></span>التجزئة والتجارة الإلكترونية</div><p><span class='lat'>Glee · Bleach · Wasfat · Podista</span></p></div><div class="card b"><div class="ct"><span class="ic"></span>الهندسة المعمارية</div><p><span class='lat'>Virtus Consulting</span></p></div></div></div>
-  <div class="src">المصدر: الملف التعريفي لشركة ذا تيم</div>
+  
   </section>
 <section class="slide ">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">02</span><span class="lbl">إنجازاتنا</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">أنظمة حقيقية تعمل اليوم في مؤسسات كبرى</h2><div class="s-sub">لا نكتب البرمجيات فحسب، بل أنجزنا ودمجنا أنظمة داخل كبرى مستشفيات الكويت وعياداتها.</div>
-  <div class="body" style="margin-top:14px"><div class="cards hosp"><div class="card"><div class="k">مستشفى الأميري</div><div class="ct">بوابة المرضى</div><p>بوابة تربط المرضى برعايتهم في أحد أبرز المستشفيات الحكومية.</p></div><div class="card"><div class="k">مستشفى الصدري</div><div class="ct">الأنظمة الطبية الحيوية</div><p>أنظمة طبية حيوية وسريرية تدعم التشخيص ورعاية الجهاز التنفسي.</p></div><div class="card"><div class="k">مستشفى جابر</div><div class="ct">الأنظمة الطبية الحيوية</div><p>النظام ذاته في أكبر مجمع مستشفيات في الشرق الأوسط.</p></div><div class="card"><div class="k">مستشفى مبارك</div><div class="ct">الأنظمة الطبية الحيوية</div><p>أنظمة طبية حيوية لأحد أكبر المستشفيات التعليمية في الكويت.</p></div><div class="card"><div class="k">عيادة دسمان للأسنان</div><div class="ct">إدارة العيادات</div><p>أنظمة متخصصة لسجلات المرضى والمواعيد والمتابعة.</p></div><div class="card"><div class="k">عيادة سدرة للمسالك</div><div class="ct">منصة العيادات الخارجية</div><p>منصة متكاملة للعيادات الخارجية، مثبتة في الإنتاج.</p></div></div></div>
-  <div class="src">المصدر: الملف التعريفي لشركة ذا تيم</div>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">أنظمة حقيقية تعمل اليوم في مؤسسات كبرى</h2>
+  <div class="body" style="margin-top:14px"><div class="cards hosp"><div class="card"><div class="k">مستشفى الأميري</div><div class="ct">بوابة المرضى</div><p>تربط المرضى برعايتهم.</p></div><div class="card"><div class="k">مستشفى الصدري</div><div class="ct">الأنظمة الطبية الحيوية</div><p>تدعم التشخيص ورعاية الجهاز التنفسي.</p></div><div class="card"><div class="k">مستشفى جابر</div><div class="ct">الأنظمة الطبية الحيوية</div><p>في أكبر مجمع مستشفيات بالشرق الأوسط.</p></div><div class="card"><div class="k">مستشفى مبارك</div><div class="ct">الأنظمة الطبية الحيوية</div><p>لأحد أكبر المستشفيات التعليمية.</p></div><div class="card"><div class="k">عيادة دسمان للأسنان</div><div class="ct">إدارة العيادات</div><p>السجلات والمواعيد والمتابعة.</p></div><div class="card"><div class="k">عيادة سدرة للمسالك</div><div class="ct">منصة العيادات الخارجية</div><p>تعمل في الإنتاج.</p></div></div></div>
+  
   </section>
 <section class="slide ">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">03</span><span class="lbl">ماذا نقدم</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">حلول متكاملة، في كل طبقة</h2><div class="s-sub">من أول محادثة حتى الدعم طويل الأمد: شريك واحد ومصدر واحد للحقيقة.</div>
-  <div class="body" style="margin-top:14px"><div class="cards layers"><div class="card b"><div class="ct"><span class="ic"></span>الاستراتيجية والاستكشاف</div><ul><li>تحليل المتطلبات</li><li>توثيق BRD / FSD</li><li>خارطة الطريق والتخطيط</li></ul></div><div class="card o"><div class="ct"><span class="ic"></span>تصميم المنتج وتجربة المستخدم</div><ul><li>رحلات وتدفقات المستخدم</li><li>تصميم الواجهات والنماذج</li><li>ثنائي اللغة عربي / إنجليزي</li></ul></div><div class="card p"><div class="ct"><span class="ic"></span>تطبيقات الويب والجوال</div><ul><li>منصات React للويب</li><li>React Native للجوال</li><li>سريعة ومتجاوبة</li></ul></div><div class="card g"><div class="ct"><span class="ic"></span>الخلفية والتكاملات</div><ul><li>واجهات برمجية ومايكروسيرفس</li><li>قواعد ونماذج البيانات</li><li>روابط الأنظمة الخارجية</li></ul></div><div class="card b"><div class="ct"><span class="ic"></span>ضمان الجودة والاختبار الآلي</div><ul><li>استراتيجية وحالات الاختبار</li><li>حزم الأتمتة</li><li>توليد الاختبارات بالذكاء الاصطناعي</li></ul></div><div class="card o"><div class="ct"><span class="ic"></span>النشر والتشغيل والدعم</div><ul><li>البنية السحابية و DevOps</li><li>المراقبة والأمان</li><li>التأهيل واتفاقيات الخدمة</li></ul></div></div></div>
-  <div class="src">المصدر: الملف التعريفي لشركة ذا تيم</div>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">حلول متكاملة، في كل طبقة</h2>
+  <div class="body" style="margin-top:14px"><div class="cards layers"><div class="card b"><div class="ct"><span class="ic"></span>الاستراتيجية</div><ul><li>تحليل المتطلبات</li><li>خارطة الطريق</li></ul></div><div class="card o"><div class="ct"><span class="ic"></span>التصميم</div><ul><li>تصميم الواجهات</li><li>عربي وإنجليزي</li></ul></div><div class="card p"><div class="ct"><span class="ic"></span>الويب والجوال</div><ul><li>مواقع ومنصات ويب</li><li>تطبيقات جوال</li></ul></div><div class="card g"><div class="ct"><span class="ic"></span>الأنظمة والتكاملات</div><ul><li>قواعد البيانات</li><li>ربط الأنظمة</li></ul></div><div class="card b"><div class="ct"><span class="ic"></span>الجودة والاختبار</div><ul><li>اختبار آلي</li><li>اختبار بالذكاء الاصطناعي</li></ul></div><div class="card o"><div class="ct"><span class="ic"></span>التشغيل والدعم</div><ul><li>استضافة ومراقبة</li><li>دعم مستمر</li></ul></div></div></div>
+  
   </section>
 <section class="slide ">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">03</span><span class="lbl">موقعكم اليوم</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
@@ -500,55 +501,53 @@ body.idle #ui{opacity:0}
   <div class="body" style="margin-top:14px">
 <div style="display:grid;grid-template-columns:1.12fr 1fr;gap:28px;height:100%">
   <div style="position:relative" class="kbwrap">
-    <div><div class="shot kb"><div class="bar"><i></i><i></i><i></i></div><img src="img/live-fold.jpg"></div><div class="cap">gaserc.org كما يظهر للزائر عند أول زيارة، 14 أكتوبر 2026</div></div>
+    <div><div class="shot kb"><div class="bar"><i></i><i></i><i></i></div><img src="img/live-fold.jpg"></div></div>
     <div style="position:absolute;bottom:.7cm;left:-12px;width:3.0cm"><div class="phone"><img src="img/live-mob.jpg"></div></div>
   </div>
   <div>
     <div class="tiles">
-      <div class="tile"><div class="n"><span class="cnt" data-to="22">22</span> <small>ميغابايت</small></div><p>وزن الصفحة الرئيسية عند أول زيارة، وتحتاج 7 إلى 8 ثوانٍ لتكتمل.</p></div>
-      <div class="tile"><div class="n"><span class="cnt" data-to="184">184</span> <small>إصداراً</small></div><p>يصدرها المركز، بينها 127 دراسة و44 عدداً من المجلة.</p></div>
-      <div class="tile"><div class="n"><span class="cnt" data-to="83">83</span> <small>من 127</small></div><p>دراسة لا تُظهر صفحتها طريقة للحصول عليها. بعضها قد يكون مقيّداً عن قصد، وهذا ما نريد أن نسمعه منكم.</p></div>
-      <div class="tile"><div class="n"><span class="cnt" data-to="40">40</span> <small>تسجيلاً</small></div><p>على قناة المركز في يوتيوب، ولا يراها زائر الموقع.</p></div>
+      <div class="tile"><div class="n"><span class="cnt" data-to="22">22</span> <small>ميغابايت</small></div><p>وزن الصفحة الرئيسية، و7 إلى 8 ثوانٍ لتكتمل.</p></div>
+      <div class="tile"><div class="n"><span class="cnt" data-to="184">184</span> <small>إصداراً</small></div><p>منها 127 دراسة و44 عدداً من المجلة.</p></div>
+      <div class="tile"><div class="n"><span class="cnt" data-to="83">83</span> <small>من 127</small></div><p>دراسة بلا طريقة ظاهرة للحصول عليها، وبعضها قد يكون مقيّداً عن قصد.</p></div>
+      <div class="tile"><div class="n"><span class="cnt" data-to="40">40</span> <small>تسجيلاً</small></div><p>على قناة المركز، ولا تظهر في الموقع.</p></div>
     </div>
-    <div class="note"><b>رصيد المركز أكبر مما يعرضه الموقع.</b> الجائزة مثلاً لا تُرى إلا في نافذة منبثقة عند الدخول. قياساتنا تخص التقنية والعرض فقط، ولا تمس قيمة ما ينشره المركز.</div>
+    <div class="note"><b>والجائزة</b> لا تُرى إلا في نافذة منبثقة عند الدخول.</div>
   </div>
 </div></div>
-  <div class="src">القياسات: 1 إلى 3 أكتوبر 2026 على الموقع المنشور، متصفح Chrome، شاشة 1440 وجوال 390</div>
+  
   </section>
 <section class="slide wt">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">03</span><span class="lbl">ثقل الصفحة</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">من 22 ميغابايت إلى أقل من ميغابايت واحد</h2><div class="s-sub">النسخة المصلحة نموذج بنيناه من صفحة موقعكم الحالية نفسها بعد تطبيق إصلاحات التدقيق.</div>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">من 22 ميغابايت إلى أقل من ميغابايت واحد</h2>
   <div class="body" style="margin-top:18px">
     <div class="bars">
       <div class="bgrp">
         <h4>حجم الصفحة الرئيسية عند أول زيارة</h4>
         <div class="br"><div class="lb">موقعكم اليوم</div><div class="tr"><div class="fill o" style="--v:1"></div></div><div class="vl"><span class="cnt" data-to="22.4" data-dec="1">22.4</span> <small>MB</small></div></div>
-        <div class="br"><div class="lb">النسخة المصلحة</div><div class="tr"><div class="fill g" style="--v:.033"></div></div><div class="vl"><span class="cnt" data-to="0.74" data-dec="2">0.74</span> <small>MB</small></div></div>
+        <div class="br"><div class="lb">بعد الإصلاح</div><div class="tr"><div class="fill g" style="--v:.033"></div></div><div class="vl"><span class="cnt" data-to="0.74" data-dec="2">0.74</span> <small>MB</small></div></div>
         <div class="br"><div class="lb">هدف الموقع الجديد</div><div class="tr"><div class="fill b" style="--v:.067"></div></div><div class="vl"><small>حتى</small> 1.5 <small>MB</small></div></div>
       </div>
       <div class="bgrp">
         <h4>زمن اكتمال التحميل</h4>
         <div class="br"><div class="lb">موقعكم اليوم</div><div class="tr"><div class="fill o" style="--v:1"></div></div><div class="vl">6.8 <small>إلى</small> 8.0 <small>ث</small></div></div>
-        <div class="br"><div class="lb">النسخة المصلحة</div><div class="tr"><div class="fill g" style="--v:.375"></div></div><div class="vl">2.7 <small>إلى</small> 3.0 <small>ث</small></div></div>
+        <div class="br"><div class="lb">بعد الإصلاح</div><div class="tr"><div class="fill g" style="--v:.375"></div></div><div class="vl">2.7 <small>إلى</small> 3.0 <small>ث</small></div></div>
       </div>
     </div>
-    <div class="note"><b>أين يذهب الوزن؟</b> في واجهة الصفحة 35 صورة متحركة، حجم كل منها 1 إلى 1.7 ميغابايت، وتُحمَّل كلها دفعة واحدة حتى لو لم يرها الزائر. في النسخة المصلحة تُحمَّل كل صورة عند الحاجة إليها فقط.</div>
+    <div class="note" style="font-size:16px"><b>السبب:</b> 35 صورة متحركة في الواجهة تُحمَّل كلها دفعة واحدة.</div>
   </div>
-  <div class="src">القياسات: 1 إلى 3 أكتوبر 2026، تحميل أول بلا ذاكرة مؤقتة، Chrome على شاشة 1440</div>
 </section>
 <section class="slide ">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">03</span><span class="lbl">اليوم والأساس الجديد</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ما نحله تحت أي اتجاه تختارونه</h2>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ثابت في الاتجاهات الخمسة كلها</h2>
   <div class="body" style="margin-top:14px">
-<table class="cmp"><thead><tr><th style="width:17%">المحور</th><th style="width:37%">الموقع اليوم</th><th>الأساس المشترك في الاتجاهات الخمسة</th></tr></thead><tbody><tr><td class="k">وزن الصفحة الرئيسية</td><td class="now">نحو 22 ميغابايت، وتحتاج 7 إلى 8 ثوانٍ</td><td class="new">هدف 1.5 ميغابايت أو أقل عند أول زيارة</td></tr><tr><td class="k">الحصول على الإصدار</td><td class="now">83 من 127 دراسة بلا طريقة ظاهرة للحصول عليها</td><td class="new">لكل إصدار حالة واضحة: تحميل أو طلب أو نسخة مطبوعة أو مقيّد، مع نموذج طلب يعطي رقماً مرجعياً</td></tr><tr><td class="k">النسخة الإنجليزية</td><td class="now">29 سطراً من 136 في الصفحة الرئيسية بالعربية غير مترجمة</td><td class="new">المحتوى غير المترجم يُوسم بلغته بدل عرضه كأنه مترجم</td></tr><tr><td class="k">سهولة الاستخدام لذوي الاحتياجات</td><td class="now">15 زراً بلا اسم في الصفحة الرئيسية، والقائمة لا تعمل بلوحة المفاتيح</td><td class="new">معيار WCAG 2.2 AA: تنقل كامل بلوحة المفاتيح وأسماء واضحة لكل زر</td></tr><tr><td class="k">تسجيلات القناة والجائزة</td><td class="now">40 تسجيلاً خارج الموقع، والجائزة في نافذة منبثقة</td><td class="new">التسجيلات تظهر مع فعالياتها، وللجائزة صفحة ثابتة بالشروط والموعد</td></tr><tr><td class="k">روابط الإصدارات القديمة</td><td class="now">روابط عامة قائمة اليوم، وروابط DOI لأعداد المجلة</td><td class="new">كل رابط حالي يُحوَّل إلى مقابله، بما فيها روابط DOI</td></tr><tr><td class="k">إدارة المحتوى</td><td class="now">لا نعرف اليوم كيف يُدار المحتوى، ونودّ أن نسمع منكم</td><td class="new">محرر يكتب وناشر يعتمد ومدير حسابات، وسجل لكل تغيير، بالعربية والإنجليزية</td></tr></tbody></table>
-<div class="note"><b>ملاحظة:</b> الاتجاه التصميمي يغيّر الشكل والانطباع فقط، أما هذا الأساس فثابت في كل الاتجاهات.</div></div>
-  <div class="src">المصدر: تدقيق UX/UI وإتاحة، أكتوبر 2026 · وثيقة المتطلبات v1.0.0 للمشروع</div>
+<table class="cmp big"><thead><tr><th style="width:24%">المحور</th><th style="width:34%">اليوم</th><th>في الموقع الجديد</th></tr></thead><tbody><tr><td class="k">وزن الصفحة</td><td class="now">22 ميغابايت</td><td class="new">1.5 ميغابايت أو أقل</td></tr><tr><td class="k">الحصول على الإصدار</td><td class="now">83 من 127 دراسة بلا طريقة ظاهرة</td><td class="new">حالة واضحة لكل إصدار ونموذج طلب</td></tr><tr><td class="k">النسخة الإنجليزية</td><td class="now">29 من 136 سطراً غير مترجمة</td><td class="new">غير المترجم يُوسم بلغته</td></tr><tr><td class="k">سهولة الوصول</td><td class="now">15 زراً بلا اسم</td><td class="new">معيار WCAG 2.2 AA</td></tr><tr><td class="k">التسجيلات والجائزة</td><td class="now">خارج الموقع أو في نافذة منبثقة</td><td class="new">داخل الموقع بصفحات ثابتة</td></tr><tr><td class="k">الروابط القديمة</td><td class="now">قائمة اليوم</td><td class="new">تبقى تعمل، بما فيها DOI</td></tr><tr><td class="k">إدارة المحتوى</td><td class="now">نودّ أن نسمع منكم</td><td class="new">محرر وناشر ومدير، وسجل لكل تغيير</td></tr></tbody></table></div>
+  
   </section>
 <section class="slide ">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">خمسة اتجاهات</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
@@ -557,7 +556,7 @@ body.idle #ui{opacity:0}
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
 <g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">خمسة اتجاهات، من الهادئ إلى المبهر</h2>
   <div class="body" style="margin-top:14px">
-<div class="grid3"><div class="c"><div class="nm"><b>1</b>المكتبة الرسمية<span style="font-weight:400;color:var(--muted);font-size:12.5px">· البحث أولاً</span></div><div><div class="shot"><img src="img/d1-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>2</b>المجلة البحثية<span style="font-weight:400;color:var(--muted);font-size:12.5px">· المركز كمؤسسة نشر</span></div><div><div class="shot"><img src="img/d2-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>3</b>الخليجي الرسمي الفاخر<span style="font-weight:400;color:var(--muted);font-size:12.5px">· هوية المركز في كل تفصيل</span></div><div><div class="shot"><img src="img/d3-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>4</b>مركز المعرفة التفاعلي<span style="font-weight:400;color:var(--muted);font-size:12.5px">· الإصدارات كقاعدة بيانات</span></div><div><div class="shot"><img src="img/d4-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>5</b>التجربة الغامرة<span style="font-weight:400;color:var(--muted);font-size:12.5px">· قصة المركز قبل قائمته</span></div><div><div class="shot"><img src="img/d5-fold.jpg"></div></div></div><div class="note" style="margin:0;align-self:stretch;display:flex;align-items:center"><div><b>كيف بُنيت.</b> لكل اتجاه صفحتان حقيقيتان تعملان في المتصفح: الصفحة الرئيسية، وصفحة دراسة واحدة هي «رخص المعلمين في الدول الأعضاء» حتى تسهل المقارنة. النصوص والصور والأغلفة والأخبار مأخوذة من موقع المركز وقناته ودليله كما هي، وحالات الإتاحة على الأغلفة توضيحية.</div></div></div></div>
+<div class="grid3"><div class="c"><div class="nm"><b>1</b>المكتبة الرسمية</div><div><div class="shot"><img src="img/d1-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>2</b>المجلة البحثية</div><div><div class="shot"><img src="img/d2-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>3</b>الخليجي الرسمي الفاخر</div><div><div class="shot"><img src="img/d3-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>4</b>مركز المعرفة التفاعلي</div><div><div class="shot"><img src="img/d4-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>5</b>التجربة الغامرة</div><div><div class="shot"><img src="img/d5-fold.jpg"></div></div></div><div class="note" style="margin:0;align-self:stretch;display:flex;align-items:center"><div style="font-size:16px"><b>نماذج حية</b> بمحتوى المركز الفعلي: الصفحة الرئيسية وصفحة دراسة لكل اتجاه.</div></div></div></div>
   
   </section>
 <section class="slide dirslide">
@@ -572,11 +571,10 @@ body.idle #ui{opacity:0}
     <div class="no">1</div>
     <h3>المكتبة الرسمية</h3>
     <div class="imp">هادئ ومؤسسي</div>
-    <h5>الفكرة</h5><p>صفحة هادئة بخلفية بيضاء دافئة وحبر كحلي ولمسة ذهبية من الشعار. أول ما يراه الزائر مربع بحث كبير وتصنيفات الإصدارات، ثم أحدث ما صدر، ثم الأخبار والفرص المفتوحة.</p>
-    <h5>نقطة القوة</h5><p>الأوضح والأسرع، ولا يحتاج الزائر إلى أي شرح. يناسب جهة تريد موقعاً رسمياً يخدم الباحث بلا زخرفة، ويُنفَّذ بأقل جهد.</p>
-    <div class="ins">مستوحى من مواقع المنظمات الإقليمية مثل الألكسو واليونسكو.</div>
+    <h5>الفكرة</h5><p>البحث في الواجهة، ثم أحدث الإصدارات والأخبار.</p>
+    <h5>نقطة القوة</h5><p>الأوضح والأسرع، وبأقل جهد تنفيذ.</p>
   </div>
-  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d1-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">المكتبة الرسمية · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d1-mob.jpg"></div></div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d1-fold.jpg"></div></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="phone"><img src="img/d1-mob.jpg"></div></div>
 </div></div>
   
   </section>
@@ -592,11 +590,10 @@ body.idle #ui{opacity:0}
     <div class="no">2</div>
     <h3>المجلة البحثية</h3>
     <div class="imp">تحريري وثقافي</div>
-    <h5>الفكرة</h5><p>تصميم يشبه مجلة مطبوعة رصينة: ترويسة باسم المركز، وعناوين كبيرة بخط النسخ، وقصة رئيسية بصورتها، وشريط للعدد الجديد من مجلة «مستقبليات تربوية»، وأرشيف يعود إلى 1994.</p>
-    <h5>نقطة القوة</h5><p>يقدّم الإصدارات والأخبار كمحتوى يُقرأ لا كقوائم، ويعطي المجلة المحكّمة الحضور الذي تستحقه. يجذب القارئ العام والإعلام.</p>
-    <div class="ins">مستوحى من مؤسسات بحثية ذات طابع تحريري مثل NFER وEEF.</div>
+    <h5>الفكرة</h5><p>مجلة رصينة: قصة رئيسية والعدد الجديد من «مستقبليات تربوية».</p>
+    <h5>نقطة القوة</h5><p>الإصدارات والأخبار محتوى يُقرأ.</p>
   </div>
-  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d2-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">المجلة البحثية · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d2-mob.jpg"></div></div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d2-fold.jpg"></div></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="phone"><img src="img/d2-mob.jpg"></div></div>
 </div></div>
   
   </section>
@@ -612,11 +609,10 @@ body.idle #ui{opacity:0}
     <div class="no">3</div>
     <h3>الخليجي الرسمي الفاخر</h3>
     <div class="imp">هيبة وهوية</div>
-    <h5>الفكرة</h5><p>عاجي وزمردي وذهبي مأخوذ من شعار المركز، ونقشة النجمة الثمانية، وأقواس خليجية تحتضن صور الملتقيات وأغلفة الإصدارات. وللجائزة مساحة احتفالية بعدّاد حتى إغلاق باب الترشح.</p>
-    <h5>نقطة القوة</h5><p>الأقرب إلى صورة جهة رسمية خليجية، ويرفع حضور المركز أمام الوزارات والوفود. وهذه هي نبرة «الخليجي الرسمي الفاخر» التي نقترحها أساساً لهوية الموقع.</p>
-    <div class="ins">مستوحى من هوية المركز نفسها وشعاره الذهبي المكتوب بالخط العربي.</div>
+    <h5>الفكرة</h5><p>ألوان شعار المركز، ونقشة النجمة الثمانية، والأقواس الخليجية.</p>
+    <h5>نقطة القوة</h5><p>الأقرب لصورة جهة رسمية أمام الوزارات والوفود.</p>
   </div>
-  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d3-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">الخليجي الرسمي الفاخر · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d3-mob.jpg"></div></div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d3-fold.jpg"></div></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="phone"><img src="img/d3-mob.jpg"></div></div>
 </div></div>
   
   </section>
@@ -632,11 +628,10 @@ body.idle #ui{opacity:0}
     <div class="no">4</div>
     <h3>مركز المعرفة التفاعلي</h3>
     <div class="imp">تحليلي وحديث</div>
-    <h5>الفكرة</h5><p>خريطة للدول الأعضاء السبع يختار منها الزائر دولة فيرى ما يخصها، ومستكشف للإصدارات بفلاتر النوع والسنة والدولة والإتاحة، ورسم للإصدارات عبر السنين. كل الأرقام محسوبة من إصدارات المركز الفعلية.</p>
-    <h5>نقطة القوة</h5><p>يخاطب الباحث وصانع القرار بلغة الأدلة، ويُظهر أثر المركز بالأرقام، ويصدّر المراجع بصيغ APA وBibTeX من أي صفحة.</p>
-    <div class="ins">مستوحى من منصات البيانات التربوية مثل OECD Education GPS وبوابات IEA.</div>
+    <h5>الفكرة</h5><p>خريطة الدول الأعضاء ومستكشف للإصدارات بالفلاتر.</p>
+    <h5>نقطة القوة</h5><p>يُظهر أثر المركز بالأرقام.</p>
   </div>
-  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d4-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">مركز المعرفة التفاعلي · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d4-mob.jpg"></div></div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d4-fold.jpg"></div></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="phone"><img src="img/d4-mob.jpg"></div></div>
 </div></div>
   
   </section>
@@ -652,11 +647,10 @@ body.idle #ui{opacity:0}
     <div class="no">5</div>
     <h3>التجربة الغامرة</h3>
     <div class="imp">إبهار وحركة</div>
-    <h5>الفكرة</h5><p>صورة كبيرة من «الملتقى الخليجي للباحثين التربويين» تتحرك ببطء، وزر يشغّل فيديو المركز، ثم فصول: مكتبة بكتب ثلاثية الأبعاد، وشريط لكلمات خبراء عالميين من مؤتمرات المركز، وفسيفساء لفعاليات الدول الأعضاء.</p>
-    <h5>نقطة القوة</h5><p>الأكثر إبهاراً، ويستثمر 40 تسجيلاً على قناة المركز لا يراها زائر الموقع اليوم. يترك انطباعاً يبقى عند الوفود والإعلام.</p>
-    <div class="ins">مستوحى من مواقع المتاحف والمؤسسات الثقافية الكبرى.</div>
+    <h5>الفكرة</h5><p>صورة وفيديو كبيران، ثم قصة المركز بالحركة.</p>
+    <h5>نقطة القوة</h5><p>الأكثر إبهاراً، ويعرض 40 تسجيلاً غائبة اليوم.</p>
   </div>
-  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d5-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">التجربة الغامرة · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d5-mob.jpg"></div></div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d5-fold.jpg"></div></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="phone"><img src="img/d5-mob.jpg"></div></div>
 </div></div>
   
   </section>
@@ -665,11 +659,11 @@ body.idle #ui{opacity:0}
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">موقعكم اليوم، وأي اتجاه تختارونه</h2>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">قبل وبعد</h2>
   <div class="body" style="margin-top:16px">
     <div class="cx">
       <div class="cx-side">
-        <div class="hint">اختاروا اتجاهاً، ثم اسحبوا الخط في الصورة للمقارنة.</div>
+        <div class="hint">اختاروا اتجاهاً واسحبوا الخط.</div>
         <div class="chips"><button class="chip" data-d="d1" data-name="المكتبة الرسمية"><b>1</b>المكتبة الرسمية</button><button class="chip" data-d="d2" data-name="المجلة البحثية"><b>2</b>المجلة البحثية</button><button class="chip on" data-d="d3" data-name="الخليجي الرسمي الفاخر"><b>3</b>الخليجي الرسمي الفاخر</button><button class="chip" data-d="d4" data-name="مركز المعرفة التفاعلي"><b>4</b>مركز المعرفة التفاعلي</button><button class="chip" data-d="d5" data-name="التجربة الغامرة"><b>5</b>التجربة الغامرة</button></div>
       </div>
       <div class="cx-stage" id="cx">
@@ -686,9 +680,9 @@ body.idle #ui{opacity:0}
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">صفحة الإصدار: ما يحتاجه الباحث في مكان واحد</h2>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">صفحة الإصدار</h2>
   <div class="body" style="margin-top:14px">
-<div class="grid3"><div class="c"><div class="nm"><b>1</b>المكتبة الرسمية</div><div><div class="shot"><img src="img/d1-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>2</b>المجلة البحثية</div><div><div class="shot"><img src="img/d2-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>3</b>الخليجي الرسمي الفاخر</div><div><div class="shot"><img src="img/d3-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>4</b>مركز المعرفة التفاعلي</div><div><div class="shot"><img src="img/d4-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>5</b>التجربة الغامرة</div><div><div class="shot"><img src="img/d5-pub.jpg"></div></div></div><div class="note" style="margin:0;align-self:stretch;display:flex;align-items:center"><div><b>الصفحة نفسها في الخمسة:</b> غلاف الإصدار وملخصه وسنته، وطريقة الحصول عليه بنموذج طلب يعبّئ العنوان تلقائياً ويعطي الطالب رقماً مرجعياً، ونص الاستشهاد الجاهز. الفرق في الشكل والترتيب فقط.</div></div></div></div>
+<div class="grid3"><div class="c"><div class="nm"><b>1</b>المكتبة الرسمية</div><div><div class="shot"><img src="img/d1-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>2</b>المجلة البحثية</div><div><div class="shot"><img src="img/d2-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>3</b>الخليجي الرسمي الفاخر</div><div><div class="shot"><img src="img/d3-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>4</b>مركز المعرفة التفاعلي</div><div><div class="shot"><img src="img/d4-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>5</b>التجربة الغامرة</div><div><div class="shot"><img src="img/d5-pub.jpg"></div></div></div><div class="note" style="margin:0;align-self:stretch;display:flex;align-items:center"><div style="font-size:16px"><b>المحتوى نفسه في الخمسة:</b> الغلاف والملخص وطريقة الحصول والاستشهاد.</div></div></div></div>
   
   </section>
 <section class="slide ">
@@ -702,24 +696,13 @@ body.idle #ui{opacity:0}
   
   </section>
 <section class="slide ">
-  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">مقارنة سريعة</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
-<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
-<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">الخمسة في جدول واحد</h2>
-  <div class="body" style="margin-top:14px">
-<table class="cmp"><thead><tr><th>الاتجاه</th><th>الانطباع</th><th>أقوى ما فيه</th><th>الأنسب لـ</th><th>جهد التنفيذ</th></tr></thead><tbody><tr><td class="k"><span class="lat" style="color:var(--mag)">1</span> · المكتبة الرسمية</td><td>هادئ ومؤسسي</td><td>البحث في الواجهة</td><td>الباحث</td><td><span class="pips"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span>الأقل</td></tr><tr><td class="k"><span class="lat" style="color:var(--mag)">2</span> · المجلة البحثية</td><td>تحريري وثقافي</td><td>المجلة والأخبار كمحتوى مقروء</td><td>القارئ والإعلام</td><td><span class="pips"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>منخفض</td></tr><tr><td class="k"><span class="lat" style="color:var(--mag)">3</span> · الخليجي الرسمي الفاخر</td><td>مهيب ورسمي</td><td>الهوية الخليجية ومكانة الجائزة</td><td>الوزارات والوفود</td><td><span class="pips"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>متوسط</td></tr><tr><td class="k"><span class="lat" style="color:var(--mag)">4</span> · مركز المعرفة التفاعلي</td><td>تحليلي وحديث</td><td>الخريطة والمستكشف والأرقام</td><td>الباحث وصانع القرار</td><td><span class="pips"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>أعلى</td></tr><tr><td class="k"><span class="lat" style="color:var(--mag)">5</span> · التجربة الغامرة</td><td>سينمائي ومبهر</td><td>الفيديو والقصة والحركة</td><td>الانطباع الأول عند الجميع</td><td><span class="pips"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>الأعلى</td></tr></tbody></table>
-<div class="note"><b>يمكن الجمع.</b> الاتجاهات ليست خيارات مغلقة. يمكن مثلاً أن يأخذ الموقع هوية الاتجاه الثالث، ومستكشف الإصدارات من الرابع، وشريط التسجيلات من الخامس. وجهد التنفيذ تقدير نسبي بين الاتجاهات، والأساس المشترك واحد في كلها.</div></div>
-  
-  </section>
-<section class="slide ">
   <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">05</span><span class="lbl">نسمع منكم</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
 <g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
-<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ما الذي تريدونه من موقعكم؟</h2><div class="s-sub">لا نطلب اليوم قراراً. نريد أن نسمع.</div>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ما الذي تريدونه من موقعكم؟</h2>
   <div class="body" style="margin-top:14px">
-<div class="ask"><div class="card"><div class="n">01</div><div class="q">أي الاتجاهات أقرب إليكم؟</div><p>وما الذي تحبونه أو لا تحبونه في كل منها؟ ويمكن اختيار اتجاه واحد أو الجمع بين أكثر من اتجاه.</p></div><div class="card"><div class="n">02</div><div class="q">من هو الزائر الأهم للموقع؟</div><p>الباحثون، أم الوزارات والوفود، أم المعلمون، أم الإعلام؟ وهل لأحدهم أولوية على الآخرين؟</p></div><div class="card"><div class="n">03</div><div class="q">ما الذي يزعجكم في موقعكم اليوم؟</div><p>وما الذي تسمعونه من الزوار والشركاء عنه؟</p></div><div class="card"><div class="n">04</div><div class="q">من يدير المحتوى في فريق المركز؟</div><p>نوصي بمسؤول محتوى واحد على الأقل يتدرب على النظام قبل أي إطلاق.</p></div><div class="card"><div class="n">05</div><div class="q">هل يستمر خيار شراء الإصدارات؟</div><p>ومن يملك المتجر؟ يحدد هذا طريقة عرض الإصدارات المطبوعة في الموقع الجديد.</p></div><div class="card"><div class="n">06</div><div class="q">ما القيم الرسمية المعتمدة؟</div><p>سنة التأسيس وساعات العمل وأرقام الهاتف تظهر اليوم بأكثر من قيمة، ونوحّدها قبل أي ترحيل.</p></div></div>
+<div class="ask"><div class="card"><div class="n">01</div><div class="q">أي اتجاه أقرب إليكم؟</div></div><div class="card"><div class="n">02</div><div class="q">من الزائر الأهم؟</div></div><div class="card"><div class="n">03</div><div class="q">ما الذي يزعجكم في الموقع اليوم؟</div></div><div class="card"><div class="n">04</div><div class="q">من يدير المحتوى لديكم؟</div></div><div class="card"><div class="n">05</div><div class="q">هل يستمر بيع الإصدارات؟</div></div><div class="card"><div class="n">06</div><div class="q">ما القيم الرسمية المعتمدة؟</div><p>التأسيس · الدوام · الهواتف</p></div></div>
 <div class="endmark"><div class="brandlogo"><svg class="ttmark" width="56" height="56" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
 <g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
@@ -731,12 +714,12 @@ body.idle #ui{opacity:0}
 <div class="zone" id="zN" title="التالي">‹</div><div class="zone" id="zP" title="السابق">›</div>
 <nav id="ui" aria-label="التنقل">
   <button id="bP" title="السابق (→)" aria-label="السابق">→</button>
-  <span class="ct" id="ct">01 / 20</span>
+  <span class="ct" id="ct">01 / 19</span>
   <button id="bN" title="التالي (← أو المسافة)" aria-label="التالي">←</button>
   <button id="bI" title="فهرس الشرائح (O)" aria-label="فهرس الشرائح">☰</button>
   <button id="bF" title="ملء الشاشة (F)" aria-label="ملء الشاشة">⛶</button>
 </nav>
-<div id="index" aria-label="فهرس الشرائح"><ol><li><button data-i="0"><span class="lat">01</span>الغلاف</button></li><li><button data-i="1"><span class="lat">02</span>ما سنستعرضه معاً</button></li><li><button data-i="2"><span class="lat">03</span>فريق يبني ويشغّل ويدعم</button></li><li><button data-i="3"><span class="lat">04</span>فريق واحد، قطاعات متعددة</button></li><li><button data-i="4"><span class="lat">05</span>أنظمة حقيقية تعمل اليوم في مؤسسات كبرى</button></li><li><button data-i="5"><span class="lat">06</span>حلول متكاملة، في كل طبقة</button></li><li><button data-i="6"><span class="lat">07</span>رصيد المركز أكبر مما يراه الزائر</button></li><li><button data-i="7"><span class="lat">08</span>من 22 ميغابايت إلى أقل من ميغابايت واحد</button></li><li><button data-i="8"><span class="lat">09</span>ما نحله تحت أي اتجاه تختارونه</button></li><li><button data-i="9"><span class="lat">10</span>خمسة اتجاهات، من الهادئ إلى المبهر</button></li><li><button data-i="10"><span class="lat">11</span>الاتجاه 1 · المكتبة الرسمية</button></li><li><button data-i="11"><span class="lat">12</span>الاتجاه 2 · المجلة البحثية</button></li><li><button data-i="12"><span class="lat">13</span>الاتجاه 3 · الخليجي الرسمي الفاخر</button></li><li><button data-i="13"><span class="lat">14</span>الاتجاه 4 · مركز المعرفة التفاعلي</button></li><li><button data-i="14"><span class="lat">15</span>الاتجاه 5 · التجربة الغامرة</button></li><li><button data-i="15"><span class="lat">16</span>موقعكم اليوم، وأي اتجاه تختارونه</button></li><li><button data-i="16"><span class="lat">17</span>صفحة الإصدار: ما يحتاجه الباحث في مكان واحد</button></li><li><button data-i="17"><span class="lat">18</span>وعلى الجوال أيضاً</button></li><li><button data-i="18"><span class="lat">19</span>الخمسة في جدول واحد</button></li><li><button data-i="19"><span class="lat">20</span>ما الذي تريدونه من موقعكم؟</button></li></ol></div>
+<div id="index" aria-label="فهرس الشرائح"><ol><li><button data-i="0"><span class="lat">01</span>الغلاف</button></li><li><button data-i="1"><span class="lat">02</span>ما سنستعرضه معاً</button></li><li><button data-i="2"><span class="lat">03</span>فريق يبني ويشغّل ويدعم</button></li><li><button data-i="3"><span class="lat">04</span>فريق واحد، قطاعات متعددة</button></li><li><button data-i="4"><span class="lat">05</span>أنظمة حقيقية تعمل اليوم في مؤسسات كبرى</button></li><li><button data-i="5"><span class="lat">06</span>حلول متكاملة، في كل طبقة</button></li><li><button data-i="6"><span class="lat">07</span>رصيد المركز أكبر مما يراه الزائر</button></li><li><button data-i="7"><span class="lat">08</span>من 22 ميغابايت إلى أقل من ميغابايت واحد</button></li><li><button data-i="8"><span class="lat">09</span>ثابت في الاتجاهات الخمسة كلها</button></li><li><button data-i="9"><span class="lat">10</span>خمسة اتجاهات، من الهادئ إلى المبهر</button></li><li><button data-i="10"><span class="lat">11</span>الاتجاه 1 · المكتبة الرسمية</button></li><li><button data-i="11"><span class="lat">12</span>الاتجاه 2 · المجلة البحثية</button></li><li><button data-i="12"><span class="lat">13</span>الاتجاه 3 · الخليجي الرسمي الفاخر</button></li><li><button data-i="13"><span class="lat">14</span>الاتجاه 4 · مركز المعرفة التفاعلي</button></li><li><button data-i="14"><span class="lat">15</span>الاتجاه 5 · التجربة الغامرة</button></li><li><button data-i="15"><span class="lat">16</span>قبل وبعد</button></li><li><button data-i="16"><span class="lat">17</span>صفحة الإصدار</button></li><li><button data-i="17"><span class="lat">18</span>وعلى الجوال أيضاً</button></li><li><button data-i="18"><span class="lat">19</span>ما الذي تريدونه من موقعكم؟</button></li></ol></div>
 <script>
 (() => {
 const stage = document.getElementById('stage');
@@ -809,14 +792,12 @@ function demoSlider(){
 
 // home / study toggle on direction slides
 document.querySelectorAll('.seg').forEach(seg => {
-  const wrap = seg.parentElement; const img = wrap.querySelector('.shot img'); const cap = wrap.querySelector('.cap');
-  const capHome = cap.textContent;
+  const wrap = seg.parentElement; const img = wrap.querySelector('.shot img');
   seg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
     seg.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
     const d = img.getAttribute('src').match(/d\d/)[0];
     img.style.opacity = 0;
     setTimeout(() => { img.src = `img/${d}-${b.dataset.k}.jpg`; img.onload = () => img.style.opacity = 1; }, 160);
-    cap.textContent = b.dataset.k === 'pub' ? capHome.replace('الصفحة الرئيسية', 'صفحة دراسة «رخص المعلمين»') : capHome;
   }));
 });
 
