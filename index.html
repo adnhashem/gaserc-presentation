@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>TheTeam · عرض للمركز العربي للبحوث التربوية لدول الخليج</title>
+<style>
+  @font-face{font-family:'Almarai';src:local('Almarai');font-weight:300}
+  :root{
+    --ink:#1b1b22; --body:#3a3c44; --muted:#8a8c95; --line:#e7e5df;
+    --card:#faf9f6; --bg:#ffffff;
+    --blue:#0a3a9e; --blue2:#2756c9;
+    --mag:#8e1a7d; --mag2:#b0248f; --purple:#6d1a6d;
+    --green:#0a7a0a; --orange:#d9650a;
+    --soft:#f7f4f8;
+  }
+  @page{size:33.867cm 19.05cm;margin:0}   /* 16:9 landscape */
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{font-family:'Almarai','Rubik',system-ui,sans-serif;color:var(--body);line-height:1.6}
+  .lat{font-family:'Rubik','Almarai',sans-serif}
+  h1,h2,h3,h4{color:var(--ink);font-weight:800;line-height:1.25}
+
+  .slide{width:33.867cm;height:19.05cm;padding:1.5cm 1.9cm 1.25cm;position:relative;overflow:hidden;
+    page-break-after:always;background:var(--bg);display:flex;flex-direction:column}
+  .slide:last-child{page-break-after:auto}
+
+  /* ---- unified brand logo (top-left on every slide) ---- */
+  .brandlogo{display:flex;align-items:center;gap:9px}
+  .brandlogo .ttmark{flex:0 0 auto}
+  .brandlogo .wm{text-align:left;line-height:.84;font-family:'Rubik','Almarai',sans-serif}
+  .brandlogo .wm .the{font-size:11px;color:#b7b7b7;font-weight:300}
+  .brandlogo .wm .team{font-size:20px;color:#9c9c9c;font-weight:300}
+
+  /* ---- shared slide chrome ---- */
+  .s-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .s-eyebrow{display:flex;align-items:center;gap:10px}
+  .s-eyebrow .dash{width:30px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--blue),var(--mag),var(--orange))}
+  .s-eyebrow .num{font-family:'Rubik';font-size:13px;font-weight:800;color:var(--mag);letter-spacing:1px}
+  .s-eyebrow .lbl{font-size:13px;font-weight:800;color:var(--muted);letter-spacing:1px}
+  .s-title{font-size:34px;font-weight:800;color:var(--ink);margin-top:2px;line-height:1.2}
+  .s-sub{font-size:15px;color:var(--muted);margin-top:6px}
+  .s-foot{position:absolute;bottom:.85cm;left:1.9cm;right:1.9cm;display:flex;justify-content:space-between;
+    align-items:center;font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+  .s-foot .lat{font-family:'Rubik'}
+  .s-foot .pg{font-family:'Rubik';font-weight:700;color:var(--mag)}
+  .body{flex:1;min-height:0}
+
+  /* ================= COVER (white) ================= */
+  .cover{background:#fff;color:var(--ink);justify-content:center}
+  .cover .c-top{position:absolute;top:1.5cm;right:1.9cm;left:1.9cm;display:flex;justify-content:space-between;align-items:center}
+  .cover .meta-r{font-size:12.5px;color:var(--muted);text-align:right;line-height:1.9}
+  .cover .meta-r b{color:var(--body);font-weight:700}
+  .cover .c-body{position:relative;z-index:2;max-width:90%}
+  .cover .eyebrow-row{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:800;letter-spacing:2px;color:var(--mag)}
+  .cover .eyebrow-row .dash{width:34px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--blue),var(--mag),var(--orange))}
+  .cover h1{font-size:66px;font-weight:800;color:var(--ink);line-height:1.05;margin:16px 0 14px}
+  .cover .client{font-size:22px;color:var(--purple);font-weight:700}
+  .cover .client .lat{color:var(--ink)}
+  .cover .tagline{font-size:18px;color:var(--body);line-height:1.7;margin-top:18px;max-width:82%;font-weight:400}
+  .cover .tagline b{color:var(--mag);font-weight:800}
+  .cover .pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .cover .pill{border:1.5px solid var(--line);background:var(--soft);border-radius:24px;padding:9px 18px;font-size:14px;color:var(--purple);font-weight:800}
+  .cover .c-foot{position:absolute;bottom:1.15cm;right:1.9cm;left:1.9cm;display:flex;justify-content:space-between;
+    font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+  .cover .c-foot .lat{font-family:'Rubik'}
+
+  /* ================= VISION ================= */
+  .vision .v-wrap{display:flex;flex-direction:column;justify-content:center;height:100%;gap:26px}
+  .vision .v-statement{font-size:44px;font-weight:800;color:var(--ink);line-height:1.32;max-width:94%}
+  .vision .v-statement .hl{color:var(--mag)}
+  .vision .v-lead{font-size:17px;color:var(--body);line-height:1.75;max-width:82%}
+  .vision .pills{display:flex;gap:12px;flex-wrap:wrap}
+  .vision .pill{border:1.5px solid var(--line);background:var(--soft);border-radius:24px;padding:10px 20px;
+    font-size:15px;color:var(--purple);font-weight:800}
+
+  /* ================= generic cards ================= */
+  .cards{display:grid;gap:16px;height:100%}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .card .ct{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:7px;display:flex;align-items:center;gap:9px}
+  .card .ct .ic{width:11px;height:11px;border-radius:3px;flex:0 0 auto;background:var(--mag)}
+  .card.b .ct .ic{background:var(--blue)} .card.g .ct .ic{background:var(--green)}
+  .card.o .ct .ic{background:var(--orange)} .card.p .ct .ic{background:var(--purple)}
+  .card p{font-size:14px;color:var(--body);line-height:1.65}
+  .card p .lat{color:var(--blue);font-weight:700}
+  .bg-grid{grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr}
+
+  /* ================= roadmap horizontal ================= */
+  .road{display:flex;height:100%;align-items:stretch;position:relative;padding-top:26px}
+  .road::before{content:"";position:absolute;top:34px;right:2%;left:2%;height:3px;background:var(--line);border-radius:2px}
+  .rp{flex:1;position:relative;padding:0 16px}
+  .rp .dot{position:absolute;top:26px;right:50%;transform:translateX(50%);width:20px;height:20px;border-radius:50%;
+    background:#fff;border:4px solid var(--mag);box-sizing:border-box}
+  .rp.done .dot{background:var(--green);border-color:var(--green)}
+  .rp.now .dot{border-color:var(--blue)}
+  .rp.now .dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--blue)}
+  .rp .rc{margin-top:64px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;height:calc(100% - 64px)}
+  .rp .stg{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.5px}
+  .rp .nm{font-size:17px;font-weight:800;color:var(--ink);margin:4px 0 8px}
+  .rp .tag{display:inline-block;font-size:11px;font-weight:800;padding:3px 11px;border-radius:20px;margin-bottom:9px}
+  .rp .tag.t-done{background:#eaf5ea;color:var(--green)}
+  .rp .tag.t-now{background:#e9eefb;color:var(--blue)}
+  .rp .tag.t-next{background:#f4eef4;color:var(--purple)}
+  .rp p{font-size:12.5px;color:var(--body);line-height:1.6}
+  .rp p .lat{color:var(--blue);font-weight:700}
+
+  /* ================= scope 3 cols ================= */
+  .scope3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;height:100%}
+  .sc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+  .sc .n{font-family:'Rubik';font-size:15px;font-weight:800;color:#fff;background:var(--ink);width:38px;height:38px;
+    border-radius:10px;display:flex;align-items:center;justify-content:center}
+  .sc h3{font-size:20px;margin:16px 0 4px}
+  .sc .en{font-size:13px;color:var(--blue);font-weight:700;font-family:'Rubik'}
+  .sc p{font-size:14px;color:var(--body);line-height:1.65;margin-top:10px;flex:1}
+  .sc .pill{align-self:flex-start;background:#eaf5ea;color:var(--green);font-weight:800;font-size:13px;
+    padding:5px 15px;border-radius:20px;margin-top:12px}
+
+  /* ================= investment ================= */
+  .invest{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;height:100%}
+  .price-main{background:linear-gradient(135deg,#2a0f28,#5a1550);color:#fff;border-radius:18px;padding:32px 34px;
+    display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+  .price-main::after{content:"";position:absolute;left:-60px;bottom:-90px;width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle,rgba(176,36,143,.45),transparent 70%)}
+  .price-main .r{display:flex;justify-content:space-between;font-size:16px;color:#e9d9e6;padding:7px 0}
+  .price-main .r .lat{font-weight:700}
+  .price-main hr{border:none;border-top:1px solid rgba(255,255,255,.25);margin:12px 0}
+  .price-main .tk{font-size:17px;font-weight:800;color:#fff}
+  .price-main .tv{font-size:60px;font-weight:800;color:#ffd9f4;font-family:'Rubik';line-height:1;margin-top:6px}
+  .price-main .tv small{font-size:22px}
+  .price-main .note{font-size:13px;color:#d9b9d4;margin-top:12px;position:relative;z-index:2}
+  .inv-right{display:flex;flex-direction:column;gap:16px}
+  .pay{width:100%;border-collapse:collapse;font-size:15px}
+  .pay th{background:var(--soft);color:var(--ink);font-weight:800;font-size:13.5px;padding:12px 14px;text-align:right;border-bottom:2px solid #ecdcea}
+  .pay th:last-child{text-align:left}
+  .pay td{padding:12px 14px;border-bottom:1px solid var(--line)}
+  .pay .amt{font-family:'Rubik';font-weight:700;text-align:left;color:var(--ink)}
+  .pay tr.tot td{background:#fbf6fa;font-weight:800;border-bottom:none}
+  .pay tr.tot .amt{color:var(--mag)}
+  .amc-side{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+  .amc-side .k{font-size:14px;color:var(--muted);font-weight:700}
+  .amc-side .v{font-size:30px;font-weight:800;color:var(--ink);font-family:'Rubik';margin-top:2px}
+  .amc-side .v small{font-size:15px;color:var(--body)}
+  .amc-side .x{font-size:12.5px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+
+  /* ================= maintenance ================= */
+  .amc-hero{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#0a3a9e,#2756c9);
+    color:#fff;border-radius:16px;padding:20px 26px;margin-bottom:18px}
+  .amc-hero .t{font-size:22px;font-weight:800;color:#fff}
+  .amc-hero .s{font-size:14px;color:#cdd9f3;margin-top:3px}
+  .amc-hero .v{font-size:40px;font-weight:800;font-family:'Rubik';color:#fff;line-height:1;text-align:left}
+  .amc-hero .v small{font-size:16px;color:#cdd9f3;display:block;font-family:'Almarai';font-weight:400}
+  .amc4{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ai{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .ai .ico{flex:0 0 auto;width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px}
+  .ai.i1 .ico{background:#e9eefb} .ai.i2 .ico{background:#eaf5ea} .ai.i3 .ico{background:#fbeaf6} .ai.i4 .ico{background:#fdeede}
+  .ai .t{font-size:16px;font-weight:800;color:var(--ink)}
+  .ai .t .lat{font-size:12px;color:var(--muted);font-weight:600}
+  .ai p{font-size:13px;color:var(--body);line-height:1.55;margin-top:2px}
+  .amc-why{margin-top:16px;font-size:13.5px;color:var(--body);line-height:1.65;background:var(--soft);
+    border:1px solid #ecdcea;border-radius:12px;padding:14px 18px}
+  .amc-why b{color:var(--purple)}
+
+  /* ================= close ================= */
+  .close{display:grid;grid-template-columns:1.1fr 1fr;gap:26px;height:100%}
+  .close .terms{list-style:none}
+  .close .terms li{font-size:14px;color:var(--body);line-height:1.5;margin-bottom:11px;position:relative;padding-right:18px}
+  .close .terms li::before{content:"•";position:absolute;right:0;color:var(--mag);font-weight:800;font-size:16px}
+  .exc{display:flex;flex-wrap:wrap;gap:9px;margin:6px 0 18px}
+  .exc .chip{border:1px solid var(--line);border-radius:20px;padding:6px 15px;font-size:13px;color:var(--body);background:#fff}
+  .exc .chip b{color:var(--ink)}
+  .close .r-col{display:flex;flex-direction:column;justify-content:flex-start;gap:26px}
+  .accept{background:var(--soft);border:1px solid #ecdcea;border-radius:16px;padding:20px 22px;font-size:14.5px;
+    color:var(--body);line-height:1.7}
+  .accept b{color:var(--ink)}
+  .sign{display:flex;gap:30px;margin-top:6px}
+  .sign .bx{flex:1;text-align:center}
+  .sign .ln{border-top:2px solid var(--ink);padding-top:10px;font-size:14px;color:var(--body);font-weight:700}
+  .sub-h{font-size:14px;font-weight:800;color:var(--muted);letter-spacing:.5px;margin:2px 0 10px}
+
+  /* ---- additions for this deck ---- */
+  .s-title.big{font-size:38px}
+  .lead{font-size:16.5px;color:var(--body);line-height:1.8;max-width:92%}
+  .src{position:absolute;bottom:1.55cm;right:1.9cm;font-size:11px;color:var(--muted)}
+  .tl{display:flex;justify-content:space-between;position:relative;margin-top:30px;padding-top:6px}
+  .tl::before{content:"";position:absolute;top:16px;right:3%;left:3%;height:3px;background:var(--line)}
+  .tl .t{flex:1;text-align:center;position:relative}
+  .tl .t .d{width:20px;height:20px;border-radius:50%;background:#fff;border:4px solid var(--blue);margin:0 auto 10px}
+  .tl .t.c2 .d{border-color:var(--mag)} .tl .t.c3 .d{border-color:var(--orange)} .tl .t.c4 .d{border-color:var(--green)}
+  .tl .t .y{font-family:'Rubik';font-size:26px;font-weight:800;color:var(--blue)}
+  .tl .t .w{font-size:13px;color:var(--muted)}
+  .stats{display:flex;gap:70px;margin-top:80px}
+  .stat .n{font-family:'Rubik';font-size:78px;font-weight:800;color:var(--blue);line-height:1}
+  .stat .l{font-size:14px;font-weight:800;color:var(--muted);margin-top:6px}
+  .two{display:grid;grid-template-columns:1.05fr 1fr;gap:34px}
+  .sectors{grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:14px}
+  .sectors .card{padding:16px 20px}
+  .sectors .card p{font-size:13px;color:var(--muted)}
+  .hosp{grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr}
+  .hosp .card .k{font-size:11.5px;font-weight:800;color:var(--blue);letter-spacing:.5px}
+  .hosp .card .ct{margin:2px 0 6px}
+  .layers{grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr}
+  .layers ul{list-style:none}
+  .layers li{font-size:13.5px;color:var(--body);line-height:1.8;padding-right:14px;position:relative}
+  .layers li::before{content:"•";position:absolute;right:0;color:var(--mag);font-weight:800}
+  .shot{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 6px 22px rgba(30,20,40,.12)}
+  .shot .bar{height:20px;background:#f1efea;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:5px;padding:0 9px}
+  .shot .bar i{width:7px;height:7px;border-radius:50%;background:#d6d3cb;display:block}
+  .shot img{display:block;width:100%}
+  .cap{font-size:11.5px;color:var(--muted);margin-top:7px;text-align:center}
+  .phone{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 8px 26px rgba(30,20,40,.18);padding:6px;background:#1b1b22}
+  .phone img{display:block;width:100%;border-radius:14px}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .tile .n{font-family:'Rubik';font-size:34px;font-weight:800;color:var(--mag);line-height:1.1}
+  .tile .n small{font-size:15px;color:var(--body);font-family:'Almarai';font-weight:700}
+  .tile p{font-size:13px;color:var(--body);line-height:1.55;margin-top:4px}
+  .note{background:var(--soft);border:1px solid #ecdcea;border-radius:12px;padding:12px 16px;font-size:13px;color:var(--body);line-height:1.65;margin-top:14px}
+  .note b{color:var(--purple)}
+  table.cmp{width:100%;border-collapse:collapse;font-size:14px}
+  table.cmp th{background:var(--soft);color:var(--ink);font-weight:800;font-size:13px;padding:11px 14px;text-align:right;border-bottom:2px solid #ecdcea}
+  table.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  table.cmp td.k{font-weight:800;color:var(--ink);white-space:nowrap}
+  table.cmp td.now{color:var(--body)}
+  table.cmp td.new{color:var(--green);font-weight:700}
+  table.cmp td .lat{font-family:'Rubik'}
+  .dir{display:grid;grid-template-columns:9.6cm 1fr;gap:26px;height:100%}
+  .dir .tx{display:flex;flex-direction:column;gap:9px}
+  .dir .no{font-family:'Rubik';font-size:54px;font-weight:800;color:var(--mag);line-height:1}
+  .dir h3{font-size:25px;line-height:1.25}
+  .dir .imp{align-self:flex-start;background:#f4eef4;color:var(--purple);font-weight:800;font-size:13px;padding:4px 14px;border-radius:20px}
+  .dir .tx h5{font-size:12.5px;font-weight:800;color:var(--muted);letter-spacing:.5px;margin-top:4px}
+  .dir .tx p{font-size:13.5px;line-height:1.7;color:var(--body)}
+  .dir .tx .ins{font-size:12px;color:var(--muted)}
+  .dir .im{position:relative}
+  .dir .im .shot{width:100%}
+  .dir .im .phone{position:absolute;bottom:.9cm;left:-12px;width:3.3cm}
+  .five{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:start}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 20px;align-items:start}
+  .grid3 .c .nm{font-size:14px;font-weight:800;color:var(--ink);margin-bottom:6px;display:flex;gap:8px;align-items:center}
+  .grid3 .c .nm b{font-family:'Rubik';color:var(--mag)}
+  .grid3 .shot img{height:4.3cm;object-fit:cover;object-position:top}
+  .five .c .nm{font-size:13.5px;font-weight:800;color:var(--ink);margin-bottom:7px;display:flex;gap:7px;align-items:center}
+  .five .c .nm b{font-family:'Rubik';color:var(--mag)}
+  .five .shot img,.five .phone img{width:100%}
+  .five .phone{padding:4px;border-radius:14px}
+  .five .phone img{border-radius:10px}
+  .ask{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;grid-auto-rows:3.9cm}
+  .ask .card{display:flex;flex-direction:column}
+  .ask .card .q{font-size:17px;font-weight:800;color:var(--ink);line-height:1.5}
+  .ask .card .n{font-family:'Rubik';font-size:13px;font-weight:800;color:var(--mag);margin-bottom:6px}
+  .ask .card p{margin-top:8px;font-size:13px;color:var(--muted)}
+  .endmark{display:flex;align-items:center;gap:22px;margin-top:22px}
+
+@font-face{font-family:'Almarai';src:url(fonts/Almarai-Light.ttf) format('truetype');font-weight:300;font-display:swap}
+@font-face{font-family:'Almarai';src:url(fonts/Almarai-Regular.ttf) format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Almarai';src:url(fonts/Almarai-Bold.ttf) format('truetype');font-weight:500 700;font-display:swap}
+@font-face{font-family:'Almarai';src:url(fonts/Almarai-ExtraBold.ttf) format('truetype');font-weight:800 900;font-display:swap}
+@font-face{font-family:'Rubik';src:url(fonts/Rubik-VariableFont_wght.ttf) format('truetype');font-weight:300 900;font-display:swap}
+@property --pos{syntax:'<percentage>';inherits:true;initial-value:50%}
+:root{--ease-out:cubic-bezier(0.23,1,0.32,1);--ease-in-out:cubic-bezier(0.77,0,0.175,1);--gold:#a8853a}
+html,body{height:100%;margin:0;background:#ecebe6;overflow:hidden}
+body{-webkit-font-smoothing:antialiased}
+#stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:50% 50%;background:#fff;
+  box-shadow:0 30px 80px rgba(40,30,50,.16),0 2px 8px rgba(40,30,50,.06);border-radius:6px;overflow:hidden}
+.slide{position:absolute!important;inset:0;width:1280px!important;height:720px!important;page-break-after:auto!important;
+  opacity:0;visibility:hidden;transform:translateX(-36px);
+  transition:opacity .45s var(--ease-out),transform .6s var(--ease-out),visibility 0s linear .6s}
+.slide.before{transform:translateX(36px)}
+.slide.is-active{opacity:1;visibility:visible;transform:none;transition:opacity .45s var(--ease-out) .08s,transform .6s var(--ease-out) .08s,visibility 0s}
+.src{bottom:.75cm}
+
+/* staggered reveal: JS tags elements with .rv and --i */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease-out),transform .7s var(--ease-out);transition-delay:0s}
+.is-active .rv{opacity:1;transform:none;transition-delay:calc(var(--i) * 60ms + 160ms)}
+
+/* cover */
+.cover h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.cover h1 .w>span{display:inline-block;transform:translateY(105%);transition:transform .8s var(--ease-out)}
+.cover.is-active h1 .w>span{transform:none}
+.cover.is-active h1 .w:nth-child(1)>span{transition-delay:.25s}.cover.is-active h1 .w:nth-child(2)>span{transition-delay:.32s}
+.cover.is-active h1 .w:nth-child(3)>span{transition-delay:.39s}.cover.is-active h1 .w:nth-child(4)>span{transition-delay:.46s}
+.cover.is-active h1 .w:nth-child(5)>span{transition-delay:.53s}
+.cover .star{position:absolute;left:-150px;bottom:-190px;width:620px;height:620px;color:var(--gold);opacity:.16;z-index:0;
+  animation:spin 140s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ttmark g>*{stroke-dasharray:1;stroke-dashoffset:0}
+.is-active .draw g>*{animation:draw 1.3s var(--ease-out) both;animation-delay:calc(var(--g) * 140ms + 150ms)}
+@keyframes draw{from{stroke-dashoffset:1;opacity:0}8%{opacity:1}to{stroke-dashoffset:0;opacity:1}}
+.cover .eyebrow-row .dash,.s-eyebrow .dash{transform-origin:right;transform:scaleX(0);transition:transform .7s var(--ease-out) .15s}
+.is-active .eyebrow-row .dash,.is-active .s-eyebrow .dash{transform:none}
+
+/* timeline line draws in */
+.tl::before{transform-origin:right;transform:scaleX(0);transition:transform 1.4s var(--ease-out) .3s}
+.is-active .tl::before{transform:none}
+
+/* screenshot wipe on direction slides */
+.dir .im .shot{clip-path:inset(0 0 100% 0);transition:clip-path 1s var(--ease-out) .25s}
+.is-active .dir .im .shot{clip-path:inset(0 0 0 0)}
+.dir .im .phone{transition:opacity .6s var(--ease-out),transform .9s var(--ease-out)}
+.dir .im .shot img{transition:opacity .18s ease}
+.seg{display:flex;gap:4px;justify-content:center;margin-top:10px}
+.seg button{font:inherit;font-size:12.5px;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--muted);
+  padding:5px 14px;border-radius:20px;cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.seg button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dir .cap{margin-top:6px}
+
+/* live screenshot gentle drift */
+.is-active .kb img{animation:kb 18s ease-in-out both}
+@keyframes kb{from{transform:scale(1.06)}to{transform:scale(1)}}
+
+/* bars */
+.bars{display:grid;grid-template-columns:1fr;gap:22px}
+.bgrp h4{font-size:15px;color:var(--muted);font-weight:800;margin-bottom:10px}
+.br{display:grid;grid-template-columns:150px 1fr 170px;align-items:center;gap:16px;margin-bottom:12px}
+.br .lb{font-size:15px;font-weight:800;color:var(--ink)}
+.br .tr{height:26px;background:#f3f1ec;border-radius:8px;overflow:hidden}
+.br .fill{height:100%;border-radius:8px;transform-origin:right;transform:scaleX(0);transition:transform 1.5s var(--ease-out) .5s;
+  width:calc(var(--v) * 100%);min-width:6px}
+.br .fill.o{background:linear-gradient(270deg,var(--orange),#e8873d)}
+.br .fill.g{background:var(--green)} .br .fill.b{background:var(--blue)}
+.is-active .br .fill{transform:none}
+.br .vl{font-family:'Rubik';font-size:26px;font-weight:800;color:var(--ink);direction:rtl}
+.br .vl small{font-family:'Almarai';font-size:14px;color:var(--muted);font-weight:700}
+
+/* compare slider */
+.cx{display:grid;grid-template-columns:1fr 760px;gap:26px;align-items:start}
+.cx-side .hint{font-size:15px;color:var(--body);line-height:1.7;margin-bottom:14px}
+.chips{display:flex;flex-direction:column;gap:8px}
+.chip{font:inherit;display:flex;align-items:center;gap:10px;text-align:right;border:1px solid var(--line);background:var(--card);
+  border-radius:12px;padding:10px 14px;font-size:15px;font-weight:800;color:var(--ink);cursor:pointer;
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.chip b{font-family:'Rubik';color:var(--mag);width:18px}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip.on b{color:#ffd9f4}
+.chip:active{transform:scale(.98)}
+.cx-stage{position:relative;aspect-ratio:2160/1350;width:100%;direction:ltr;overflow:hidden;border-radius:12px;border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(30,20,40,.14);touch-action:none;cursor:ew-resize;user-select:none;--pos:50%;
+  transition:--pos 1.2s var(--ease-in-out)}
+.cx-stage.drag{transition:none}
+.cx-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cx-stage .top{clip-path:inset(0 0 0 var(--pos));transition:opacity .25s ease}
+.cx-stage .handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.12),0 0 18px rgba(0,0,0,.25)}
+.cx-stage .knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.cx-stage .tag{position:absolute;top:12px;font-size:13px;font-weight:800;padding:5px 12px;border-radius:20px;direction:rtl}
+.cx-stage .tag.l{left:12px;background:rgba(27,27,34,.82);color:#fff}
+.cx-stage .tag.r{right:12px;background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+
+/* comparison pips */
+.pips{display:inline-flex;gap:3px;margin-left:8px;vertical-align:middle}
+.pips i{width:9px;height:9px;border-radius:2px;background:var(--line)}
+.pips i.on{background:var(--mag)}
+
+/* chrome */
+#bar{position:fixed;top:0;left:0;right:0;height:3px;z-index:20;background:transparent}
+#bar i{display:block;height:100%;background:linear-gradient(270deg,#0a3a9e,#8e1a7d,#d9650a,#0a7a0a);transform-origin:right;
+  transform:scaleX(var(--p,0));transition:transform .6s var(--ease-out)}
+#ui{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:4px;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.07);border-radius:30px;padding:4px;
+  box-shadow:0 8px 24px rgba(30,20,40,.12);font-family:'Almarai',sans-serif;direction:rtl;transition:opacity .4s ease}
+body.idle #ui{opacity:0}
+#ui button{font:inherit;border:0;background:transparent;width:38px;height:38px;border-radius:50%;cursor:pointer;color:#1b1b22;
+  display:flex;align-items:center;justify-content:center;font-size:17px;transition:background-color .15s ease}
+#ui button:active{transform:scale(.94)}
+#ui .ct{font-family:'Rubik',sans-serif;font-size:13px;font-weight:700;color:#8e1a7d;min-width:58px;text-align:center;direction:ltr}
+.zone{position:fixed;top:0;bottom:0;width:6vw;z-index:10;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:rgba(27,27,34,.35);font-size:30px;opacity:0;transition:opacity .2s ease}
+#zN{left:0} #zP{right:0}
+#index{position:fixed;inset:0;z-index:30;background:rgba(236,235,230,.86);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transition:opacity .25s var(--ease-out),visibility 0s linear .25s;direction:rtl;font-family:'Almarai',sans-serif}
+#index.open{opacity:1;visibility:visible;transition:opacity .25s var(--ease-out)}
+#index ol{list-style:none;margin:0;padding:22px;background:#fff;border-radius:18px;box-shadow:0 30px 80px rgba(40,30,50,.18);
+  columns:2;column-gap:14px;width:min(860px,92vw);transform:translateY(10px) scale(.98);transition:transform .3s var(--ease-out)}
+#index.open ol{transform:none}
+#index li button{font:inherit;width:100%;display:flex;gap:12px;align-items:center;text-align:right;border:0;background:transparent;
+  padding:9px 12px;border-radius:10px;font-size:15px;color:#1b1b22;cursor:pointer;break-inside:avoid}
+#index li button .lat{font-family:'Rubik';font-weight:800;color:#8e1a7d;font-size:13px}
+#index li button.cur{background:#f7f4f8;font-weight:800}
+.five6 .phone img{aspect-ratio:780/1328;object-fit:cover;object-position:top}
+@media (hover:hover) and (pointer:fine){
+  .zone:hover{opacity:1}
+  #ui button:hover{background:#f1efea}
+  .seg button:not(.on):hover{color:var(--ink)}
+  .chip:not(.on):hover{border-color:#cfc9d6}
+  #index li button:hover{background:#f7f4f8}
+}
+@media (prefers-reduced-motion:reduce){
+  .slide,.slide.before{transform:none}
+  .rv{transform:none;transition:opacity .3s ease}
+  .is-active .rv{transition-delay:0s}
+  .cover h1 .w>span{transform:none;transition:none}
+  .cover .star,.is-active .kb img{animation:none}
+  .is-active .draw g>*{animation:none}
+  .dir .im .shot{clip-path:none;transition:none}
+  .br .fill,.tl::before,.eyebrow-row .dash,.s-eyebrow .dash{transition:none;transform:none}
+  .cx-stage{transition:none}
+}
+</style>
+</head>
+<body>
+<div id="bar"><i></i></div>
+<main id="stage" aria-live="polite">
+
+<section class="slide cover">
+  <div class="c-top">
+    <div class="meta-r"><b>التاريخ:</b> 14 أكتوبر 2026<br><b>الاجتماع:</b> عرض الاتجاهات التصميمية</div>
+    <div class="brandlogo"><svg class="ttmark" width="52" height="52" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div>
+  </div>
+  <svg class="star" viewBox="-100 -100 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".6">
+<rect x="-70" y="-70" width="140" height="140"/><rect x="-70" y="-70" width="140" height="140" transform="rotate(45)"/>
+<rect x="-46" y="-46" width="92" height="92"/><rect x="-46" y="-46" width="92" height="92" transform="rotate(45)"/>
+<circle r="30"/><circle r="96"/></g></svg><div class="c-body">
+    <div class="eyebrow-row"><span class="dash"></span><span>TheTeam · عرض تقديمي</span></div>
+    <h1><span class="w"><span>موقع</span></span> <span class="w"><span>يليق</span></span> <span class="w"><span>بما</span></span> <span class="w"><span>ينشره</span></span> <span class="w"><span>المركز</span></span></h1>
+    <div class="client">المركز العربي للبحوث التربوية لدول الخليج</div>
+    <div class="tagline">نعرّفكم بفريقنا وأعمالنا، ثم نعرض <b>خمسة اتجاهات تصميمية</b> بُنيت بمحتوى المركز الفعلي ونقارنها بموقعكم اليوم، ونسمع منكم ما تريدونه.</div>
+    <div class="pills">
+      <span class="pill">من نحن</span>
+      <span class="pill">موقعكم اليوم</span>
+      <span class="pill">خمسة اتجاهات</span>
+      <span class="pill">نسمع منكم</span>
+    </div>
+  </div>
+  <div class="c-foot"><span>عرض للنقاش، لا يتضمن سعراً ولا طلب اعتماد</span><span class="lat" dir="ltr">theteamkw.com · info@theteamkw.com · +965 5008008</span></div>
+</section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">00</span><span class="lbl">المحتوى</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ما سنستعرضه معاً</h2><div class="s-sub">جلسة قصيرة نعرض فيها ما أنجزناه، ثم نتركها مفتوحة لآرائكم.</div>
+  <div class="body" style="margin-top:14px"><div class="cards" style="grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr"><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">01</span>من نحن</div><p>قصة ذا تيم وأرقامها منذ 2017</p></div><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">02</span>أعمالنا</div><p>القطاعات التي خدمناها وما نقدمه</p></div><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">03</span>موقعكم اليوم</div><p>ما يراه الزائر وما يُقاس فيه</p></div><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">04</span>خمسة اتجاهات</div><p>نموذج حي لكل اتجاه ومقارنة بينها</p></div><div class="card"><div class="ct" style="font-size:22px"><span class="lat" style="color:var(--mag);font-weight:800">05</span>نسمع منكم</div><p>أسئلتنا لكم، وما الذي تريدونه</p></div></div></div>
+  
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">01</span><span class="lbl">من نحن</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">فريق يبني ويشغّل ويدعم</h2>
+  <div class="body" style="margin-top:14px">
+<div class="two">
+  <div>
+    <p class="lead">ذا تيم شركة تقنية كويتية تأسست عام 2017. نصمم ونطور ونشغّل البرمجيات بالكامل وداخلياً، دون إسناد خارجي، وبثنائية لغوية كاملة بالعربية والإنجليزية.</p>
+    <p class="lead" style="margin-top:12px">أنجزنا منذ تأسيسنا أكثر من 60 نظاماً في الرعاية الصحية والقطاعات الحكومية والقانونية والتجزئة والسيارات والصناعة.</p>
+  </div>
+  <div>
+    <div class="tl">
+      <div class="t c1"><div class="d"></div><div class="y">2017</div><div class="w">تأسست في الكويت</div></div>
+      <div class="t c2"><div class="d"></div><div class="y">2019</div><div class="w">أول أنظمة المستشفيات</div></div>
+      <div class="t c3"><div class="d"></div><div class="y">2022</div><div class="w">منتجات المنصّات</div></div>
+      <div class="t c4"><div class="d"></div><div class="y">2026</div><div class="w">أحدث المنصّات</div></div>
+    </div>
+  </div>
+</div>
+<div class="stats">
+  <div class="stat"><div class="n"><span dir="ltr"><span class="cnt" data-to="9">9</span>+</span></div><div class="l">سنوات من العطاء</div></div>
+  <div class="stat"><div class="n"><span dir="ltr"><span class="cnt" data-to="60">60</span>+</span></div><div class="l">نظاماً ومشروعاً</div></div>
+  <div class="stat"><div class="n"><span dir="ltr"><span class="cnt" data-to="8">8</span>+</span></div><div class="l">قطاعات نخدمها</div></div>
+</div></div>
+  <div class="src">المصدر: الملف التعريفي لشركة ذا تيم</div>
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">02</span><span class="lbl">أعمالنا</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">فريق واحد، قطاعات متعددة</h2><div class="s-sub">أنجزنا مشاريع في القطاعين العام والخاص بالكويت.</div>
+  <div class="body" style="margin-top:14px"><div class="cards sectors"><div class="card b"><div class="ct"><span class="ic"></span>الرعاية الصحية</div><p>الأميري · الصدري · جابر<br>مبارك · دسمان · سدرة</p></div><div class="card o"><div class="ct"><span class="ic"></span>الخدمات المصرفية</div><p>بنك برقان<br>منصة ذكاء إدارة المشاريع</p></div><div class="card p"><div class="ct"><span class="ic"></span>اختبار الأنظمة</div><p>ضمان الجودة والاختبار الآلي<br>توليد الاختبارات بالذكاء الاصطناعي</p></div><div class="card g"><div class="ct"><span class="ic"></span>القطاع القانوني</div><p>مجموعة الجوهرة</p></div><div class="card b"><div class="ct"><span class="ic"></span>الفنون والثقافة</div><p>دن غاليري</p></div><div class="card o"><div class="ct"><span class="ic"></span>السيارات والرياضة</div><p>أكاديمية <span class='lat'>Q8 Moto</span></p></div><div class="card p"><div class="ct"><span class="ic"></span>الصناعة</div><p><span class='lat'>NICE</span> · الوطنية للسيراميك الصناعي</p></div><div class="card g"><div class="ct"><span class="ic"></span>التجزئة والتجارة الإلكترونية</div><p><span class='lat'>Glee · Bleach · Wasfat · Podista</span></p></div><div class="card b"><div class="ct"><span class="ic"></span>الهندسة المعمارية</div><p><span class='lat'>Virtus Consulting</span></p></div></div></div>
+  <div class="src">المصدر: الملف التعريفي لشركة ذا تيم</div>
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">02</span><span class="lbl">إنجازاتنا</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">أنظمة حقيقية تعمل اليوم في مؤسسات كبرى</h2><div class="s-sub">لا نكتب البرمجيات فحسب، بل أنجزنا ودمجنا أنظمة داخل كبرى مستشفيات الكويت وعياداتها.</div>
+  <div class="body" style="margin-top:14px"><div class="cards hosp"><div class="card"><div class="k">مستشفى الأميري</div><div class="ct">بوابة المرضى</div><p>بوابة تربط المرضى برعايتهم في أحد أبرز المستشفيات الحكومية.</p></div><div class="card"><div class="k">مستشفى الصدري</div><div class="ct">الأنظمة الطبية الحيوية</div><p>أنظمة طبية حيوية وسريرية تدعم التشخيص ورعاية الجهاز التنفسي.</p></div><div class="card"><div class="k">مستشفى جابر</div><div class="ct">الأنظمة الطبية الحيوية</div><p>النظام ذاته في أكبر مجمع مستشفيات في الشرق الأوسط.</p></div><div class="card"><div class="k">مستشفى مبارك</div><div class="ct">الأنظمة الطبية الحيوية</div><p>أنظمة طبية حيوية لأحد أكبر المستشفيات التعليمية في الكويت.</p></div><div class="card"><div class="k">عيادة دسمان للأسنان</div><div class="ct">إدارة العيادات</div><p>أنظمة متخصصة لسجلات المرضى والمواعيد والمتابعة.</p></div><div class="card"><div class="k">عيادة سدرة للمسالك</div><div class="ct">منصة العيادات الخارجية</div><p>منصة متكاملة للعيادات الخارجية، مثبتة في الإنتاج.</p></div></div></div>
+  <div class="src">المصدر: الملف التعريفي لشركة ذا تيم</div>
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">03</span><span class="lbl">ماذا نقدم</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">حلول متكاملة، في كل طبقة</h2><div class="s-sub">من أول محادثة حتى الدعم طويل الأمد: شريك واحد ومصدر واحد للحقيقة.</div>
+  <div class="body" style="margin-top:14px"><div class="cards layers"><div class="card b"><div class="ct"><span class="ic"></span>الاستراتيجية والاستكشاف</div><ul><li>تحليل المتطلبات</li><li>توثيق BRD / FSD</li><li>خارطة الطريق والتخطيط</li></ul></div><div class="card o"><div class="ct"><span class="ic"></span>تصميم المنتج وتجربة المستخدم</div><ul><li>رحلات وتدفقات المستخدم</li><li>تصميم الواجهات والنماذج</li><li>ثنائي اللغة عربي / إنجليزي</li></ul></div><div class="card p"><div class="ct"><span class="ic"></span>تطبيقات الويب والجوال</div><ul><li>منصات React للويب</li><li>React Native للجوال</li><li>سريعة ومتجاوبة</li></ul></div><div class="card g"><div class="ct"><span class="ic"></span>الخلفية والتكاملات</div><ul><li>واجهات برمجية ومايكروسيرفس</li><li>قواعد ونماذج البيانات</li><li>روابط الأنظمة الخارجية</li></ul></div><div class="card b"><div class="ct"><span class="ic"></span>ضمان الجودة والاختبار الآلي</div><ul><li>استراتيجية وحالات الاختبار</li><li>حزم الأتمتة</li><li>توليد الاختبارات بالذكاء الاصطناعي</li></ul></div><div class="card o"><div class="ct"><span class="ic"></span>النشر والتشغيل والدعم</div><ul><li>البنية السحابية و DevOps</li><li>المراقبة والأمان</li><li>التأهيل واتفاقيات الخدمة</li></ul></div></div></div>
+  <div class="src">المصدر: الملف التعريفي لشركة ذا تيم</div>
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">03</span><span class="lbl">موقعكم اليوم</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">رصيد المركز أكبر مما يراه الزائر</h2>
+  <div class="body" style="margin-top:14px">
+<div style="display:grid;grid-template-columns:1.12fr 1fr;gap:28px;height:100%">
+  <div style="position:relative" class="kbwrap">
+    <div><div class="shot kb"><div class="bar"><i></i><i></i><i></i></div><img src="img/live-fold.jpg"></div><div class="cap">gaserc.org كما يظهر للزائر عند أول زيارة، 14 أكتوبر 2026</div></div>
+    <div style="position:absolute;bottom:.7cm;left:-12px;width:3.0cm"><div class="phone"><img src="img/live-mob.jpg"></div></div>
+  </div>
+  <div>
+    <div class="tiles">
+      <div class="tile"><div class="n"><span class="cnt" data-to="22">22</span> <small>ميغابايت</small></div><p>وزن الصفحة الرئيسية عند أول زيارة، وتحتاج 7 إلى 8 ثوانٍ لتكتمل.</p></div>
+      <div class="tile"><div class="n"><span class="cnt" data-to="184">184</span> <small>إصداراً</small></div><p>يصدرها المركز، بينها 127 دراسة و44 عدداً من المجلة.</p></div>
+      <div class="tile"><div class="n"><span class="cnt" data-to="83">83</span> <small>من 127</small></div><p>دراسة لا تُظهر صفحتها طريقة للحصول عليها. بعضها قد يكون مقيّداً عن قصد، وهذا ما نريد أن نسمعه منكم.</p></div>
+      <div class="tile"><div class="n"><span class="cnt" data-to="40">40</span> <small>تسجيلاً</small></div><p>على قناة المركز في يوتيوب، ولا يراها زائر الموقع.</p></div>
+    </div>
+    <div class="note"><b>رصيد المركز أكبر مما يعرضه الموقع.</b> الجائزة مثلاً لا تُرى إلا في نافذة منبثقة عند الدخول. قياساتنا تخص التقنية والعرض فقط، ولا تمس قيمة ما ينشره المركز.</div>
+  </div>
+</div></div>
+  <div class="src">القياسات: 1 إلى 3 أكتوبر 2026 على الموقع المنشور، متصفح Chrome، شاشة 1440 وجوال 390</div>
+  </section>
+<section class="slide wt">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">03</span><span class="lbl">ثقل الصفحة</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">من 22 ميغابايت إلى أقل من ميغابايت واحد</h2><div class="s-sub">النسخة المصلحة نموذج بنيناه من صفحة موقعكم الحالية نفسها بعد تطبيق إصلاحات التدقيق.</div>
+  <div class="body" style="margin-top:18px">
+    <div class="bars">
+      <div class="bgrp">
+        <h4>حجم الصفحة الرئيسية عند أول زيارة</h4>
+        <div class="br"><div class="lb">موقعكم اليوم</div><div class="tr"><div class="fill o" style="--v:1"></div></div><div class="vl"><span class="cnt" data-to="22.4" data-dec="1">22.4</span> <small>MB</small></div></div>
+        <div class="br"><div class="lb">النسخة المصلحة</div><div class="tr"><div class="fill g" style="--v:.033"></div></div><div class="vl"><span class="cnt" data-to="0.74" data-dec="2">0.74</span> <small>MB</small></div></div>
+        <div class="br"><div class="lb">هدف الموقع الجديد</div><div class="tr"><div class="fill b" style="--v:.067"></div></div><div class="vl"><small>حتى</small> 1.5 <small>MB</small></div></div>
+      </div>
+      <div class="bgrp">
+        <h4>زمن اكتمال التحميل</h4>
+        <div class="br"><div class="lb">موقعكم اليوم</div><div class="tr"><div class="fill o" style="--v:1"></div></div><div class="vl">6.8 <small>إلى</small> 8.0 <small>ث</small></div></div>
+        <div class="br"><div class="lb">النسخة المصلحة</div><div class="tr"><div class="fill g" style="--v:.375"></div></div><div class="vl">2.7 <small>إلى</small> 3.0 <small>ث</small></div></div>
+      </div>
+    </div>
+    <div class="note"><b>أين يذهب الوزن؟</b> في واجهة الصفحة 35 صورة متحركة، حجم كل منها 1 إلى 1.7 ميغابايت، وتُحمَّل كلها دفعة واحدة حتى لو لم يرها الزائر. في النسخة المصلحة تُحمَّل كل صورة عند الحاجة إليها فقط.</div>
+  </div>
+  <div class="src">القياسات: 1 إلى 3 أكتوبر 2026، تحميل أول بلا ذاكرة مؤقتة، Chrome على شاشة 1440</div>
+</section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">03</span><span class="lbl">اليوم والأساس الجديد</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ما نحله تحت أي اتجاه تختارونه</h2>
+  <div class="body" style="margin-top:14px">
+<table class="cmp"><thead><tr><th style="width:17%">المحور</th><th style="width:37%">الموقع اليوم</th><th>الأساس المشترك في الاتجاهات الخمسة</th></tr></thead><tbody><tr><td class="k">وزن الصفحة الرئيسية</td><td class="now">نحو 22 ميغابايت، وتحتاج 7 إلى 8 ثوانٍ</td><td class="new">هدف 1.5 ميغابايت أو أقل عند أول زيارة</td></tr><tr><td class="k">الحصول على الإصدار</td><td class="now">83 من 127 دراسة بلا طريقة ظاهرة للحصول عليها</td><td class="new">لكل إصدار حالة واضحة: تحميل أو طلب أو نسخة مطبوعة أو مقيّد، مع نموذج طلب يعطي رقماً مرجعياً</td></tr><tr><td class="k">النسخة الإنجليزية</td><td class="now">29 سطراً من 136 في الصفحة الرئيسية بالعربية غير مترجمة</td><td class="new">المحتوى غير المترجم يُوسم بلغته بدل عرضه كأنه مترجم</td></tr><tr><td class="k">سهولة الاستخدام لذوي الاحتياجات</td><td class="now">15 زراً بلا اسم في الصفحة الرئيسية، والقائمة لا تعمل بلوحة المفاتيح</td><td class="new">معيار WCAG 2.2 AA: تنقل كامل بلوحة المفاتيح وأسماء واضحة لكل زر</td></tr><tr><td class="k">تسجيلات القناة والجائزة</td><td class="now">40 تسجيلاً خارج الموقع، والجائزة في نافذة منبثقة</td><td class="new">التسجيلات تظهر مع فعالياتها، وللجائزة صفحة ثابتة بالشروط والموعد</td></tr><tr><td class="k">روابط الإصدارات القديمة</td><td class="now">روابط عامة قائمة اليوم، وروابط DOI لأعداد المجلة</td><td class="new">كل رابط حالي يُحوَّل إلى مقابله، بما فيها روابط DOI</td></tr><tr><td class="k">إدارة المحتوى</td><td class="now">لا نعرف اليوم كيف يُدار المحتوى، ونودّ أن نسمع منكم</td><td class="new">محرر يكتب وناشر يعتمد ومدير حسابات، وسجل لكل تغيير، بالعربية والإنجليزية</td></tr></tbody></table>
+<div class="note"><b>ملاحظة:</b> الاتجاه التصميمي يغيّر الشكل والانطباع فقط، أما هذا الأساس فثابت في كل الاتجاهات.</div></div>
+  <div class="src">المصدر: تدقيق UX/UI وإتاحة، أكتوبر 2026 · وثيقة المتطلبات v1.0.0 للمشروع</div>
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">خمسة اتجاهات</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">خمسة اتجاهات، من الهادئ إلى المبهر</h2>
+  <div class="body" style="margin-top:14px">
+<div class="grid3"><div class="c"><div class="nm"><b>1</b>المكتبة الرسمية<span style="font-weight:400;color:var(--muted);font-size:12.5px">· البحث أولاً</span></div><div><div class="shot"><img src="img/d1-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>2</b>المجلة البحثية<span style="font-weight:400;color:var(--muted);font-size:12.5px">· المركز كمؤسسة نشر</span></div><div><div class="shot"><img src="img/d2-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>3</b>الخليجي الرسمي الفاخر<span style="font-weight:400;color:var(--muted);font-size:12.5px">· هوية المركز في كل تفصيل</span></div><div><div class="shot"><img src="img/d3-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>4</b>مركز المعرفة التفاعلي<span style="font-weight:400;color:var(--muted);font-size:12.5px">· الإصدارات كقاعدة بيانات</span></div><div><div class="shot"><img src="img/d4-fold.jpg"></div></div></div><div class="c"><div class="nm"><b>5</b>التجربة الغامرة<span style="font-weight:400;color:var(--muted);font-size:12.5px">· قصة المركز قبل قائمته</span></div><div><div class="shot"><img src="img/d5-fold.jpg"></div></div></div><div class="note" style="margin:0;align-self:stretch;display:flex;align-items:center"><div><b>كيف بُنيت.</b> لكل اتجاه صفحتان حقيقيتان تعملان في المتصفح: الصفحة الرئيسية، وصفحة دراسة واحدة هي «رخص المعلمين في الدول الأعضاء» حتى تسهل المقارنة. النصوص والصور والأغلفة والأخبار مأخوذة من موقع المركز وقناته ودليله كما هي، وحالات الإتاحة على الأغلفة توضيحية.</div></div></div></div>
+  
+  </section>
+<section class="slide dirslide">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">الاتجاه 1</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div>
+  <div class="body" style="margin-top:14px">
+<div class="dir">
+  <div class="tx">
+    <div class="no">1</div>
+    <h3>المكتبة الرسمية</h3>
+    <div class="imp">هادئ ومؤسسي</div>
+    <h5>الفكرة</h5><p>صفحة هادئة بخلفية بيضاء دافئة وحبر كحلي ولمسة ذهبية من الشعار. أول ما يراه الزائر مربع بحث كبير وتصنيفات الإصدارات، ثم أحدث ما صدر، ثم الأخبار والفرص المفتوحة.</p>
+    <h5>نقطة القوة</h5><p>الأوضح والأسرع، ولا يحتاج الزائر إلى أي شرح. يناسب جهة تريد موقعاً رسمياً يخدم الباحث بلا زخرفة، ويُنفَّذ بأقل جهد.</p>
+    <div class="ins">مستوحى من مواقع المنظمات الإقليمية مثل الألكسو واليونسكو.</div>
+  </div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d1-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">المكتبة الرسمية · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d1-mob.jpg"></div></div>
+</div></div>
+  
+  </section>
+<section class="slide dirslide">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">الاتجاه 2</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div>
+  <div class="body" style="margin-top:14px">
+<div class="dir">
+  <div class="tx">
+    <div class="no">2</div>
+    <h3>المجلة البحثية</h3>
+    <div class="imp">تحريري وثقافي</div>
+    <h5>الفكرة</h5><p>تصميم يشبه مجلة مطبوعة رصينة: ترويسة باسم المركز، وعناوين كبيرة بخط النسخ، وقصة رئيسية بصورتها، وشريط للعدد الجديد من مجلة «مستقبليات تربوية»، وأرشيف يعود إلى 1994.</p>
+    <h5>نقطة القوة</h5><p>يقدّم الإصدارات والأخبار كمحتوى يُقرأ لا كقوائم، ويعطي المجلة المحكّمة الحضور الذي تستحقه. يجذب القارئ العام والإعلام.</p>
+    <div class="ins">مستوحى من مؤسسات بحثية ذات طابع تحريري مثل NFER وEEF.</div>
+  </div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d2-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">المجلة البحثية · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d2-mob.jpg"></div></div>
+</div></div>
+  
+  </section>
+<section class="slide dirslide">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">الاتجاه 3</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div>
+  <div class="body" style="margin-top:14px">
+<div class="dir">
+  <div class="tx">
+    <div class="no">3</div>
+    <h3>الخليجي الرسمي الفاخر</h3>
+    <div class="imp">هيبة وهوية</div>
+    <h5>الفكرة</h5><p>عاجي وزمردي وذهبي مأخوذ من شعار المركز، ونقشة النجمة الثمانية، وأقواس خليجية تحتضن صور الملتقيات وأغلفة الإصدارات. وللجائزة مساحة احتفالية بعدّاد حتى إغلاق باب الترشح.</p>
+    <h5>نقطة القوة</h5><p>الأقرب إلى صورة جهة رسمية خليجية، ويرفع حضور المركز أمام الوزارات والوفود. وهذه هي نبرة «الخليجي الرسمي الفاخر» التي نقترحها أساساً لهوية الموقع.</p>
+    <div class="ins">مستوحى من هوية المركز نفسها وشعاره الذهبي المكتوب بالخط العربي.</div>
+  </div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d3-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">الخليجي الرسمي الفاخر · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d3-mob.jpg"></div></div>
+</div></div>
+  
+  </section>
+<section class="slide dirslide">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">الاتجاه 4</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div>
+  <div class="body" style="margin-top:14px">
+<div class="dir">
+  <div class="tx">
+    <div class="no">4</div>
+    <h3>مركز المعرفة التفاعلي</h3>
+    <div class="imp">تحليلي وحديث</div>
+    <h5>الفكرة</h5><p>خريطة للدول الأعضاء السبع يختار منها الزائر دولة فيرى ما يخصها، ومستكشف للإصدارات بفلاتر النوع والسنة والدولة والإتاحة، ورسم للإصدارات عبر السنين. كل الأرقام محسوبة من إصدارات المركز الفعلية.</p>
+    <h5>نقطة القوة</h5><p>يخاطب الباحث وصانع القرار بلغة الأدلة، ويُظهر أثر المركز بالأرقام، ويصدّر المراجع بصيغ APA وBibTeX من أي صفحة.</p>
+    <div class="ins">مستوحى من منصات البيانات التربوية مثل OECD Education GPS وبوابات IEA.</div>
+  </div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d4-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">مركز المعرفة التفاعلي · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d4-mob.jpg"></div></div>
+</div></div>
+  
+  </section>
+<section class="slide dirslide">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">الاتجاه 5</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div>
+  <div class="body" style="margin-top:14px">
+<div class="dir">
+  <div class="tx">
+    <div class="no">5</div>
+    <h3>التجربة الغامرة</h3>
+    <div class="imp">إبهار وحركة</div>
+    <h5>الفكرة</h5><p>صورة كبيرة من «الملتقى الخليجي للباحثين التربويين» تتحرك ببطء، وزر يشغّل فيديو المركز، ثم فصول: مكتبة بكتب ثلاثية الأبعاد، وشريط لكلمات خبراء عالميين من مؤتمرات المركز، وفسيفساء لفعاليات الدول الأعضاء.</p>
+    <h5>نقطة القوة</h5><p>الأكثر إبهاراً، ويستثمر 40 تسجيلاً على قناة المركز لا يراها زائر الموقع اليوم. يترك انطباعاً يبقى عند الوفود والإعلام.</p>
+    <div class="ins">مستوحى من مواقع المتاحف والمؤسسات الثقافية الكبرى.</div>
+  </div>
+  <div class="im"><div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/d5-fold.jpg"></div><div class="seg"><button class="on" data-k="fold">الصفحة الرئيسية</button><button data-k="pub">صفحة الدراسة</button></div><div class="cap">التجربة الغامرة · الصفحة الرئيسية، نموذج حي بمحتوى المركز</div></div><div class="phone"><img src="img/d5-mob.jpg"></div></div>
+</div></div>
+  
+  </section>
+<section class="slide cmpx">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">قارنوا بأنفسكم</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">موقعكم اليوم، وأي اتجاه تختارونه</h2>
+  <div class="body" style="margin-top:16px">
+    <div class="cx">
+      <div class="cx-side">
+        <div class="hint">اختاروا اتجاهاً، ثم اسحبوا الخط في الصورة للمقارنة.</div>
+        <div class="chips"><button class="chip" data-d="d1" data-name="المكتبة الرسمية"><b>1</b>المكتبة الرسمية</button><button class="chip" data-d="d2" data-name="المجلة البحثية"><b>2</b>المجلة البحثية</button><button class="chip on" data-d="d3" data-name="الخليجي الرسمي الفاخر"><b>3</b>الخليجي الرسمي الفاخر</button><button class="chip" data-d="d4" data-name="مركز المعرفة التفاعلي"><b>4</b>مركز المعرفة التفاعلي</button><button class="chip" data-d="d5" data-name="التجربة الغامرة"><b>5</b>التجربة الغامرة</button></div>
+      </div>
+      <div class="cx-stage" id="cx">
+        <img class="base" src="img/live-fold.jpg" alt="موقع المركز اليوم">
+        <img class="top" id="cxTop" src="img/d3-fold.jpg" alt="الاتجاه المقترح">
+        <div class="handle"><span class="knob">⟷</span></div>
+        <span class="tag l">موقعكم اليوم</span><span class="tag r" id="cxName">الخليجي الرسمي الفاخر</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">صفحة الدراسة</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">صفحة الإصدار: ما يحتاجه الباحث في مكان واحد</h2>
+  <div class="body" style="margin-top:14px">
+<div class="grid3"><div class="c"><div class="nm"><b>1</b>المكتبة الرسمية</div><div><div class="shot"><img src="img/d1-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>2</b>المجلة البحثية</div><div><div class="shot"><img src="img/d2-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>3</b>الخليجي الرسمي الفاخر</div><div><div class="shot"><img src="img/d3-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>4</b>مركز المعرفة التفاعلي</div><div><div class="shot"><img src="img/d4-pub.jpg"></div></div></div><div class="c"><div class="nm"><b>5</b>التجربة الغامرة</div><div><div class="shot"><img src="img/d5-pub.jpg"></div></div></div><div class="note" style="margin:0;align-self:stretch;display:flex;align-items:center"><div><b>الصفحة نفسها في الخمسة:</b> غلاف الإصدار وملخصه وسنته، وطريقة الحصول عليه بنموذج طلب يعبّئ العنوان تلقائياً ويعطي الطالب رقماً مرجعياً، ونص الاستشهاد الجاهز. الفرق في الشكل والترتيب فقط.</div></div></div></div>
+  
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">على الجوال</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">وعلى الجوال أيضاً</h2>
+  <div class="body" style="margin-top:14px">
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:4px;align-items:start" class="five five6"><div class="c"><div class="nm"><b style="color:var(--muted)">اليوم</b>الموقع الحالي</div><div class="phone"><img src="img/live-mob.jpg"></div></div><div class="c"><div class="nm"><b>1</b>المكتبة الرسمية</div><div class="phone"><img src="img/d1-mob.jpg"></div></div><div class="c"><div class="nm"><b>2</b>المجلة البحثية</div><div class="phone"><img src="img/d2-mob.jpg"></div></div><div class="c"><div class="nm"><b>3</b>الخليجي الرسمي الفاخر</div><div class="phone"><img src="img/d3-mob.jpg"></div></div><div class="c"><div class="nm"><b>4</b>مركز المعرفة التفاعلي</div><div class="phone"><img src="img/d4-mob.jpg"></div></div><div class="c"><div class="nm"><b>5</b>التجربة الغامرة</div><div class="phone"><img src="img/d5-mob.jpg"></div></div></div></div>
+  
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">04</span><span class="lbl">مقارنة سريعة</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">الخمسة في جدول واحد</h2>
+  <div class="body" style="margin-top:14px">
+<table class="cmp"><thead><tr><th>الاتجاه</th><th>الانطباع</th><th>أقوى ما فيه</th><th>الأنسب لـ</th><th>جهد التنفيذ</th></tr></thead><tbody><tr><td class="k"><span class="lat" style="color:var(--mag)">1</span> · المكتبة الرسمية</td><td>هادئ ومؤسسي</td><td>البحث في الواجهة</td><td>الباحث</td><td><span class="pips"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span>الأقل</td></tr><tr><td class="k"><span class="lat" style="color:var(--mag)">2</span> · المجلة البحثية</td><td>تحريري وثقافي</td><td>المجلة والأخبار كمحتوى مقروء</td><td>القارئ والإعلام</td><td><span class="pips"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>منخفض</td></tr><tr><td class="k"><span class="lat" style="color:var(--mag)">3</span> · الخليجي الرسمي الفاخر</td><td>مهيب ورسمي</td><td>الهوية الخليجية ومكانة الجائزة</td><td>الوزارات والوفود</td><td><span class="pips"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>متوسط</td></tr><tr><td class="k"><span class="lat" style="color:var(--mag)">4</span> · مركز المعرفة التفاعلي</td><td>تحليلي وحديث</td><td>الخريطة والمستكشف والأرقام</td><td>الباحث وصانع القرار</td><td><span class="pips"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>أعلى</td></tr><tr><td class="k"><span class="lat" style="color:var(--mag)">5</span> · التجربة الغامرة</td><td>سينمائي ومبهر</td><td>الفيديو والقصة والحركة</td><td>الانطباع الأول عند الجميع</td><td><span class="pips"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>الأعلى</td></tr></tbody></table>
+<div class="note"><b>يمكن الجمع.</b> الاتجاهات ليست خيارات مغلقة. يمكن مثلاً أن يأخذ الموقع هوية الاتجاه الثالث، ومستكشف الإصدارات من الرابع، وشريط التسجيلات من الخامس. وجهد التنفيذ تقدير نسبي بين الاتجاهات، والأساس المشترك واحد في كلها.</div></div>
+  
+  </section>
+<section class="slide ">
+  <div class="s-head"><div class="s-eyebrow"><span class="dash"></span><span class="num">05</span><span class="lbl">نسمع منكم</span></div><div class="brandlogo"><svg class="ttmark" width="40" height="40" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div></div><h2 class="s-title">ما الذي تريدونه من موقعكم؟</h2><div class="s-sub">لا نطلب اليوم قراراً. نريد أن نسمع.</div>
+  <div class="body" style="margin-top:14px">
+<div class="ask"><div class="card"><div class="n">01</div><div class="q">أي الاتجاهات أقرب إليكم؟</div><p>وما الذي تحبونه أو لا تحبونه في كل منها؟ ويمكن اختيار اتجاه واحد أو الجمع بين أكثر من اتجاه.</p></div><div class="card"><div class="n">02</div><div class="q">من هو الزائر الأهم للموقع؟</div><p>الباحثون، أم الوزارات والوفود، أم المعلمون، أم الإعلام؟ وهل لأحدهم أولوية على الآخرين؟</p></div><div class="card"><div class="n">03</div><div class="q">ما الذي يزعجكم في موقعكم اليوم؟</div><p>وما الذي تسمعونه من الزوار والشركاء عنه؟</p></div><div class="card"><div class="n">04</div><div class="q">من يدير المحتوى في فريق المركز؟</div><p>نوصي بمسؤول محتوى واحد على الأقل يتدرب على النظام قبل أي إطلاق.</p></div><div class="card"><div class="n">05</div><div class="q">هل يستمر خيار شراء الإصدارات؟</div><p>ومن يملك المتجر؟ يحدد هذا طريقة عرض الإصدارات المطبوعة في الموقع الجديد.</p></div><div class="card"><div class="n">06</div><div class="q">ما القيم الرسمية المعتمدة؟</div><p>سنة التأسيس وساعات العمل وأرقام الهاتف تظهر اليوم بأكثر من قيمة، ونوحّدها قبل أي ترحيل.</p></div></div>
+<div class="endmark"><div class="brandlogo"><svg class="ttmark" width="56" height="56" viewBox="0 0 104 104" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(2,4)" stroke="#D9650A"><circle cx="12" cy="11" r="6"/><circle cx="29" cy="11" r="6"/><rect x="4" y="19" width="30" height="20" rx="3"/><path d="M34 24 L44 19 L44 39 L34 34 Z"/></g>
+<g transform="translate(58,4)" stroke="#990099"><rect x="13" y="1" width="14" height="27" rx="7"/><path d="M5 19 A15 15 0 0 0 35 19"/><line x1="20" y1="34" x2="20" y2="42"/><line x1="12" y1="42" x2="28" y2="42"/></g>
+<g transform="translate(2,58)" stroke="#0A3A9E"><rect x="3" y="2" width="36" height="27" rx="4"/><path d="M11 40 L21 33 L31 40"/><line x1="11" y1="40" x2="31" y2="40"/></g>
+<g transform="translate(58,58)" stroke="#0A7A0A"><rect x="13" y="3" width="13" height="8" rx="1.5"/><rect x="3" y="10" width="36" height="28" rx="4"/><circle cx="21" cy="25" r="8"/></g></svg><div class="wm"><div class="the">The</div><div class="team lat">Team</div></div></div><div style="font-size:13px;color:var(--muted);line-height:1.8"><b style="color:var(--ink)">ذا تيم · الكويت</b><br><span class="lat" dir="ltr">info@theteamkw.com · +965 5008008 · theteamkw.com</span></div></div></div>
+  
+  </section>
+</main>
+<div class="zone" id="zN" title="التالي">‹</div><div class="zone" id="zP" title="السابق">›</div>
+<nav id="ui" aria-label="التنقل">
+  <button id="bP" title="السابق (→)" aria-label="السابق">→</button>
+  <span class="ct" id="ct">01 / 20</span>
+  <button id="bN" title="التالي (← أو المسافة)" aria-label="التالي">←</button>
+  <button id="bI" title="فهرس الشرائح (O)" aria-label="فهرس الشرائح">☰</button>
+  <button id="bF" title="ملء الشاشة (F)" aria-label="ملء الشاشة">⛶</button>
+</nav>
+<div id="index" aria-label="فهرس الشرائح"><ol><li><button data-i="0"><span class="lat">01</span>الغلاف</button></li><li><button data-i="1"><span class="lat">02</span>ما سنستعرضه معاً</button></li><li><button data-i="2"><span class="lat">03</span>فريق يبني ويشغّل ويدعم</button></li><li><button data-i="3"><span class="lat">04</span>فريق واحد، قطاعات متعددة</button></li><li><button data-i="4"><span class="lat">05</span>أنظمة حقيقية تعمل اليوم في مؤسسات كبرى</button></li><li><button data-i="5"><span class="lat">06</span>حلول متكاملة، في كل طبقة</button></li><li><button data-i="6"><span class="lat">07</span>رصيد المركز أكبر مما يراه الزائر</button></li><li><button data-i="7"><span class="lat">08</span>من 22 ميغابايت إلى أقل من ميغابايت واحد</button></li><li><button data-i="8"><span class="lat">09</span>ما نحله تحت أي اتجاه تختارونه</button></li><li><button data-i="9"><span class="lat">10</span>خمسة اتجاهات، من الهادئ إلى المبهر</button></li><li><button data-i="10"><span class="lat">11</span>الاتجاه 1 · المكتبة الرسمية</button></li><li><button data-i="11"><span class="lat">12</span>الاتجاه 2 · المجلة البحثية</button></li><li><button data-i="12"><span class="lat">13</span>الاتجاه 3 · الخليجي الرسمي الفاخر</button></li><li><button data-i="13"><span class="lat">14</span>الاتجاه 4 · مركز المعرفة التفاعلي</button></li><li><button data-i="14"><span class="lat">15</span>الاتجاه 5 · التجربة الغامرة</button></li><li><button data-i="15"><span class="lat">16</span>موقعكم اليوم، وأي اتجاه تختارونه</button></li><li><button data-i="16"><span class="lat">17</span>صفحة الإصدار: ما يحتاجه الباحث في مكان واحد</button></li><li><button data-i="17"><span class="lat">18</span>وعلى الجوال أيضاً</button></li><li><button data-i="18"><span class="lat">19</span>الخمسة في جدول واحد</button></li><li><button data-i="19"><span class="lat">20</span>ما الذي تريدونه من موقعكم؟</button></li></ol></div>
+<script>
+(() => {
+const stage = document.getElementById('stage');
+const slides = [...stage.querySelectorAll('.slide')];
+const N = slides.length;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ctr = document.getElementById('ct');
+const bar = document.querySelector('#bar i');
+const idx = document.getElementById('index');
+let cur = -1;
+
+function fit(){
+  const s = Math.min(innerWidth / 1280, innerHeight / 720) * (document.fullscreenElement ? 1 : .96);
+  stage.style.transform = `translate(-50%,-50%) scale(${s})`;
+}
+addEventListener('resize', fit); fit();
+
+// reveal tagging
+const REVEAL = '.cover .meta-r,.cover .eyebrow-row,.cover .client,.cover .tagline,.cover .pill,.cover .c-foot,' +
+  '.s-eyebrow .lbl,.s-title,.s-sub,.lead,.tl .t,.stat,.tile,.cards>.card,.ask>.card,.note,.src,table.cmp thead,table.cmp tbody tr,' +
+  '.dir .no,.dir h3,.dir .imp,.dir .tx h5,.dir .tx p,.dir .ins,.dir .seg,.dir .cap,.dir .phone,.five>.c,.grid3>.c,.endmark,.bgrp h4,.br,' +
+  '.cx-side .hint,.chips .chip,.cx-stage,.two>div>.shot,.kbwrap';
+slides.forEach(sl => {
+  const seen = new Set(); let i = 0;
+  sl.querySelectorAll(REVEAL).forEach(el => { if (seen.has(el)) return; seen.add(el); el.classList.add('rv'); el.style.setProperty('--i', Math.min(i++, 16)); });
+  sl.querySelectorAll('.ttmark').forEach(svg => {
+    if (!sl.classList.contains('cover') && !svg.closest('.endmark')) return;
+    svg.classList.add('draw');
+    svg.querySelectorAll('g').forEach((g, gi) => { g.style.setProperty('--g', gi); g.querySelectorAll('*').forEach(e => e.setAttribute('pathLength', '1')); });
+  });
+});
+
+// counters
+function count(el){
+  const to = parseFloat(el.dataset.to), dec = +(el.dataset.dec || 0);
+  if (reduce) { el.textContent = to.toFixed(dec); return; }
+  const t0 = performance.now(), dur = 1400, delay = 350;
+  el.textContent = (0).toFixed(dec);
+  const tick = t => {
+    const p = Math.min(Math.max((t - t0 - delay) / dur, 0), 1);
+    el.textContent = (to * (1 - Math.pow(1 - p, 3))).toFixed(dec);
+    if (p < 1 && el.closest('.slide').classList.contains('is-active')) requestAnimationFrame(tick);
+    else el.textContent = to.toFixed(dec);
+  };
+  requestAnimationFrame(tick);
+}
+
+// compare slider
+const cx = document.getElementById('cx');
+const cxTop = document.getElementById('cxTop');
+const cxName = document.getElementById('cxName');
+function setPos(clientX){
+  const r = cx.getBoundingClientRect();
+  const p = Math.min(Math.max((clientX - r.left) / r.width, 0), 1) * 100;
+  cx.style.setProperty('--pos', p + '%');
+}
+cx.addEventListener('pointerdown', e => { cx.classList.add('drag'); cx.setPointerCapture(e.pointerId); setPos(e.clientX); });
+cx.addEventListener('pointermove', e => { if (cx.classList.contains('drag')) setPos(e.clientX); });
+['pointerup','pointercancel'].forEach(t => cx.addEventListener(t, () => cx.classList.remove('drag')));
+document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x === b));
+  cxTop.style.opacity = 0;
+  setTimeout(() => { cxTop.src = `img/${b.dataset.d}-fold.jpg`; cxName.textContent = b.dataset.name; cxTop.onload = () => cxTop.style.opacity = 1; }, 180);
+}));
+function demoSlider(){
+  if (reduce) { cx.style.setProperty('--pos', '50%'); return; }
+  cx.classList.add('drag'); cx.style.setProperty('--pos', '96%');
+  requestAnimationFrame(() => requestAnimationFrame(() => { cx.classList.remove('drag'); setTimeout(() => cx.style.setProperty('--pos', '45%'), 700); }));
+}
+
+// home / study toggle on direction slides
+document.querySelectorAll('.seg').forEach(seg => {
+  const wrap = seg.parentElement; const img = wrap.querySelector('.shot img'); const cap = wrap.querySelector('.cap');
+  const capHome = cap.textContent;
+  seg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    seg.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+    const d = img.getAttribute('src').match(/d\d/)[0];
+    img.style.opacity = 0;
+    setTimeout(() => { img.src = `img/${d}-${b.dataset.k}.jpg`; img.onload = () => img.style.opacity = 1; }, 160);
+    cap.textContent = b.dataset.k === 'pub' ? capHome.replace('الصفحة الرئيسية', 'صفحة دراسة «رخص المعلمين»') : capHome;
+  }));
+});
+
+function go(n){
+  n = Math.max(0, Math.min(N - 1, n));
+  if (n === cur) return;
+  cur = n;
+  slides.forEach((s, i) => {
+    s.classList.toggle('is-active', i === n);
+    s.classList.toggle('before', i < n);
+    s.setAttribute('aria-hidden', i === n ? 'false' : 'true');
+  });
+  const sl = slides[n];
+  sl.querySelectorAll('.cnt').forEach(count);
+  if (sl.contains(cx)) demoSlider();
+  ctr.textContent = `${String(n + 1).padStart(2, '0')} / ${N}`;
+  bar.style.setProperty('--p', (n + 1) / N);
+  history.replaceState(null, '', '#/' + (n + 1));
+  idx.querySelectorAll('button').forEach(b => b.classList.toggle('cur', +b.dataset.i === n));
+}
+const next = () => go(cur + 1), prev = () => go(cur - 1);
+
+function toggleIndex(force){ idx.classList.toggle('open', force ?? !idx.classList.contains('open')); }
+function fullscreen(){ document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.(); }
+document.addEventListener('fullscreenchange', fit);
+
+addEventListener('keydown', e => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key;
+  if (['ArrowLeft','ArrowDown','PageDown',' ','Enter'].includes(k)) { e.preventDefault(); toggleIndex(false); next(); }
+  else if (['ArrowRight','ArrowUp','PageUp','Backspace'].includes(k)) { e.preventDefault(); toggleIndex(false); prev(); }
+  else if (k === 'Home') go(0);
+  else if (k === 'End') go(N - 1);
+  else if (k === 'f' || k === 'F') fullscreen();
+  else if (k === 'o' || k === 'O' || k === 'g' || k === 'G') toggleIndex();
+  else if (k === 'Escape') toggleIndex(false);
+});
+document.getElementById('bN').onclick = next;
+document.getElementById('bP').onclick = prev;
+document.getElementById('bI').onclick = () => toggleIndex();
+document.getElementById('bF').onclick = fullscreen;
+document.getElementById('zN').onclick = next;
+document.getElementById('zP').onclick = prev;
+idx.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { go(+b.dataset.i); toggleIndex(false); } else toggleIndex(false); });
+
+// swipe (touch only; ignores the compare slider)
+let sx = null, sy = null;
+addEventListener('touchstart', e => { if (e.target.closest('.cx-stage')) { sx = null; return; } sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+addEventListener('touchend', e => {
+  if (sx === null) return;
+  const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) (dx > 0 ? next : prev)();
+  sx = null;
+}, {passive:true});
+
+// hide chrome when idle
+let it; const wake = () => { document.body.classList.remove('idle'); clearTimeout(it); it = setTimeout(() => document.body.classList.add('idle'), 2600); };
+addEventListener('pointermove', wake); wake();
+
+// preload alternates
+['d1','d2','d3','d4','d5'].forEach(d => ['pub','fold'].forEach(k => { const i = new Image(); i.src = `img/${d}-${k}.jpg`; }));
+
+const h = parseInt((location.hash.match(/\d+/) || [1])[0], 10);
+document.fonts?.ready.then(() => go(h - 1)) ?? go(h - 1);
+setTimeout(() => { if (cur < 0) go(h - 1); }, 1200);
+})();
+</script>
+</body>
+</html>
